@@ -2,18 +2,19 @@
 import AegisLogo from '../assets/Aegis_Logo.png'; // Adjust the path if necessary
 import React from "react";
 import Image from 'next/image';
+
 const Navbar = () => {
   return (
     <nav className="bg-black bg-opacity-0 text-white relative z-20">
-    <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-      {/* Logo */}
-      <Image 
-        src={AegisLogo}
-        alt="Club Logo"
-        width={180}  // specify the width
-        height={180} // specify the height
-        className="mr-2"
-      />
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Image 
+          src={AegisLogo}
+          alt="Club Logo"
+          width={180}  // specify the width
+          height={180} // specify the height
+          className="mr-2"
+        />
 
         {/* Navigation Links */}
         <ul className="flex items-center space-x-6">
@@ -83,6 +84,16 @@ const Navbar = () => {
           <li>
             <a href="#blogs" className="hover:text-gray-400">
               Blogs
+            </a>
+          </li>
+
+          {/* Sign In Button */}
+          <li>
+            <a 
+              href="#signin" 
+              className="px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition duration-300"
+            >
+              Sign In
             </a>
           </li>
         </ul>

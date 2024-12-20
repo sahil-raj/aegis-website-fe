@@ -21,12 +21,12 @@ const Page = () => {
       {/* Page Content */}
       <div className="flex flex-col items-center justify-center h-screen text-center">
         <h1 className="text-4xl font-bold font-Ndot-47 mb-4">
-          Decrypt.Decode.Decipher
+          Decrypt.Decode.Decipher.
         </h1>
         <p className="max-w-2xl mx-auto text-lg">
-          DSCE's Cyber Security Club is to explore cutting-edge technology and gain
-          valuable cyber-security knowledge and experience through training,
-          workshops, and collaboration with fellow enthusiasts.
+        The Cyber Security Club at DSCE,Bengaluru is dedicated to exploring advanced technologies 
+        and acquiring invaluable knowledge and hands-on experience in cybersecurity through engaging 
+        training sessions, interactive workshop and collaborative initiatives with like-minded enthusiasts.
         </p>
         <h1 className="text-2xl font-bold font-Ndot-47 mt-20">
           Unleash Your Cyber Potential
