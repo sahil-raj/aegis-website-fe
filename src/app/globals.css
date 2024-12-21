@@ -12,10 +12,35 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+  /* styles/globals.css */
+@font-face {
+  font-family: 'Ndot-47';  /* Custom name for your font */
+  src: url('../app/constants/Ndot-47.ttf') format('truetype');  /* Path to the font file */
+  font-weight: normal;
+  font-style: normal;
 }
+}
+/* Non-glowing buttons (used for Teams and Events) */
+.navbar-non-glow {
+  all: unset; /* Reset all inherited styles */
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar-non-glow:hover {
+  color: gray;
+  background-color: transparent; /* Prevent any background glow */
+}
+
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica,Ndot-47,sans-serif;
 }
