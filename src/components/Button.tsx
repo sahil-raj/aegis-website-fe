@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "../button.css";
+import "./button.css";
 
 const GlowingButton: React.FC = () => {
   const handleClick = (): void => {
