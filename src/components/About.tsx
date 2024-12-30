@@ -3,31 +3,54 @@
 export const TEAM = [
   {
     title: "Technical Team",
-    image: "/assets/team1.png",
+    image: "/team1.png",
     description:
       "The Technical Team of Aegis is the driving force behind the club’s innovations and cyber defense initiatives. Comprising highly skilled and motivated individuals, this team works relentlessly to tackle complex cybersecurity challenges, develop security solutions, and promote awareness in the ever-evolving world of digital threats.",
-    technologies: ["Ethical Hacking", "Network Security", "Cryptography", "Penetration Testing"],
+    technologies: [
+      "Ethical Hacking",
+      "Network Security",
+      "Cryptography",
+      "Penetration Testing",
+    ],
     link: "#",
   },
   {
     title: "Development Team",
-    image: "/assets/team2.png",
-    description: "The Development Team focuses on creating robust and scalable solutions for the club's cyber defense tools.",
-    technologies: ["Web Development", "App Development", "Security", "UI/UX Design"],
+    image: "/team2.png",
+    description:
+      "The Development Team focuses on creating robust and scalable solutions for the club's cyber defense tools.",
+    technologies: [
+      "Web Development",
+      "App Development",
+      "Security",
+      "UI/UX Design",
+    ],
     link: "#",
   },
   {
     title: "Research Team",
-    image: "/assets/team3.png",
-    description: "The Research Team is responsible for conducting in-depth research into the latest cyber threats and developing new methodologies to counter them.",
-    technologies: ["Cyber Threat Intelligence", "Data Analytics", "Machine Learning", "Blockchain"],
+    image: "/team3.png",
+    description:
+      "The Research Team is responsible for conducting in-depth research into the latest cyber threats and developing new methodologies to counter them.",
+    technologies: [
+      "Cyber Threat Intelligence",
+      "Data Analytics",
+      "Machine Learning",
+      "Blockchain",
+    ],
     link: "#",
   },
   {
     title: "Operations Team",
-    image: "/assets/team4.png",
-    description: "The Operations Team ensures the seamless operation and management of the club’s cybersecurity programs and initiatives.",
-    technologies: ["Project Management", "Logistics", "Team Coordination", "Event Management"],
+    image: "/team4.png",
+    description:
+      "The Operations Team ensures the seamless operation and management of the club’s cybersecurity programs and initiatives.",
+    technologies: [
+      "Project Management",
+      "Logistics",
+      "Team Coordination",
+      "Event Management",
+    ],
     link: "#",
   },
 ];
@@ -43,7 +66,9 @@ const About = () => {
 
       {/* About Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-20">
-        <h2 className="text-center text-4xl font-bold mb-12 text-white">About Us</h2>
+        <h2 className="text-center text-4xl font-bold mb-12 text-white">
+          About Us
+        </h2>
         <p className="text-center italic text-xl text-neutral-300 mb-16">
           Sanctum Sanctorum Aegis Invicta!
         </p>
@@ -51,14 +76,22 @@ const About = () => {
         <h3 className="text-center text-3xl mb-6 text-white">Our Teams</h3>
 
         {TEAM.map((team, index) => (
-          <div key={index} className="mb-16 flex flex-wrap lg:justify-center items-start">
+          <div
+            key={index}
+            className="mb-16 flex flex-wrap lg:justify-center items-start"
+          >
             <div className="w-full lg:w-1/6">
               <a href={team.link} target="_blank" rel="noopener noreferrer">
                 <div className="fade-border mb-6 rounded">
                   <img
                     src={team.image}
                     alt={team.title}
-                    style={{ width: '200px', height: '200px', display: 'block', margin: '0 auto' }}
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      display: "block",
+                      margin: "0 auto",
+                    }}
                     className="rounded"
                   />
                 </div>
