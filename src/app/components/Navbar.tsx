@@ -1,18 +1,19 @@
 "use client";
-import AegisLogo from '../assets/Aegis_Logo.png'; // Adjust the path if necessary
-import React from "react";
-import Image from 'next/image';
 
-const Navbar = () => {
+import React from "react";
+import Image from "next/image";
+import AegisLogo from "../assets/Aegis_Logo.png"; // Adjust the path if necessary
+
+const Navbar: React.FC = () => {
   return (
     <nav className="bg-black bg-opacity-0 text-white relative z-20">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Image 
+        <Image
           src={AegisLogo}
           alt="Club Logo"
-          width={180}  // specify the width
-          height={180} // specify the height
+          width={180} // Specify the width
+          height={180} // Specify the height
           className="mr-2"
         />
 
@@ -20,43 +21,16 @@ const Navbar = () => {
         <ul className="flex items-center space-x-6">
           {/* Home */}
           <li>
-            <a href="#home" className="hover:text-gray-400">
+            <a href="#Home" className="hover:text-gray-400">
               Home
             </a>
           </li>
 
           {/* About Us */}
           <li>
-            <a href="#about" className="hover:text-gray-400">
+            <a href="#About" className="hover:text-gray-400">
               About Us
             </a>
-          </li>
-
-          {/* Teams (Dropdown) */}
-          <li className="relative group">
-            <button className="hover:text-gray-400">Teams</button>
-            <ul className="absolute left-0 mt-0 hidden group-hover:block bg-transparent text-white shadow-lg rounded-lg py-2">
-              <li>
-                <a href="#technical-team" className="block px-4 py-2 hover:bg-gray-700">
-                  Technical Team
-                </a>
-              </li>
-              <li>
-                <a href="#cultural-team" className="block px-4 py-2 hover:bg-gray-700">
-                  Cultural Team
-                </a>
-              </li>
-              <li>
-                <a href="#media-team" className="block px-4 py-2 hover:bg-gray-700">
-                  Media Team
-                </a>
-              </li>
-              <li>
-                <a href="#operations-team" className="block px-4 py-2 hover:bg-gray-700">
-                  Operations Team
-                </a>
-              </li>
-            </ul>
           </li>
 
           {/* Events (Dropdown) */}
@@ -64,13 +38,18 @@ const Navbar = () => {
             <button className="hover:text-gray-400">Events</button>
             <ul className="absolute left-0 mt-0 hidden group-hover:block bg-transparent text-white shadow-lg rounded-lg py-2">
               <li>
-                <a href="#workshops" className="block px-4 py-2 hover:bg-gray-700">
-                  Workshops
+                <a href="#decipher1.0" className="block px-8 py-2 hover:bg-gray-700">
+                  Decipher 1.0
                 </a>
               </li>
               <li>
-                <a href="#competitions" className="block px-4 py-2 hover:bg-gray-700">
-                  Competitions
+                <a href="#ctf1.0" className="block px-8 py-2 hover:bg-gray-700">
+                  CTF 1.0
+                </a>
+              </li>
+              <li>
+                <a href="#foodwalk" className="block px-8 py-2 hover:bg-gray-700">
+                  Food Walk
                 </a>
               </li>
             </ul>
@@ -99,8 +78,8 @@ const Navbar = () => {
 
           {/* Sign In Button */}
           <li>
-            <a 
-              href="#signin" 
+            <a
+              href="#signin"
               className="px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition duration-300"
             >
               Sign In

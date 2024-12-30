@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import GlowingButton from './components/Button';
+import HomePage from './Home';
 import About from './components/About';
 import './globals.css';
 
@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen w-screen bg-black overflow-hidden">
       {/* Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-30">
+      <div className="relative top-0 left-0 right-0 z-30">
         <Navbar />
       </div>
 
@@ -21,29 +21,8 @@ const Page = () => {
       </div>
 
       {/* Page Content */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen text-center z-20">
-        <h1 className="text-4xl font-bold font-Ndot-47 mb-4">
-          Decrypt.Decode.Decipher.
-        </h1>
-        <p className="max-w-2xl mx-auto text-lg">
-          The Cyber Security Club at DSCE, Bengaluru is dedicated to exploring advanced technologies 
-          and acquiring invaluable knowledge and hands-on experience in cybersecurity through engaging 
-          training sessions, interactive workshops, and collaborative initiatives with like-minded enthusiasts.
-        </p>
-        <h1 className="text-2xl font-bold font-Ndot-47 mt-20">
-          Unleash Your Cyber Potential
-        </h1>
-
-        {/* Glowing Button */}
-        <div className="mt-8 z-20 relative">
-          <GlowingButton />
-        </div>
-      </div>
-
-      {/* About Section */}
-      <div id="about" className="mt-20 z-20 relative">
-        <About />
-      </div>
+      <HomePage />
+      <About />
     </div>
   );
 };

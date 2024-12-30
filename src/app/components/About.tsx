@@ -1,6 +1,16 @@
 "use client";
 
-export const TEAM = [
+import React from "react";
+
+type TeamMember = {
+  title: string;
+  image: string;
+  description: string;
+  technologies: string[];
+  link: string;
+};
+
+export const TEAM: TeamMember[] = [
   {
     title: "Technical Team",
     image: "/assets/team1.png",
@@ -32,7 +42,7 @@ export const TEAM = [
   },
 ];
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <div className="relative bg-black min-h-screen w-full overflow-hidden py-20">
       {/* Grid Background */}
@@ -58,7 +68,7 @@ const About = () => {
                   <img
                     src={team.image}
                     alt={team.title}
-                    style={{ width: '200px', height: '200px', display: 'block', margin: '0 auto' }}
+                    style={{ width: "200px", height: "200px", display: "block", margin: "0 auto" }}
                     className="rounded"
                   />
                 </div>
