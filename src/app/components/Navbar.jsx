@@ -35,15 +35,25 @@ const Navbar = () => {
           {/* Teams (Dropdown) */}
           <li className="relative group">
             <button className="hover:text-gray-400">Teams</button>
-            <ul className="absolute left-0 mt-0 hidden group-hover:block bg-gray-800 text-white shadow-lg rounded-lg py-2">
+            <ul className="absolute left-0 mt-0 hidden group-hover:block bg-transparent text-white shadow-lg rounded-lg py-2">
               <li>
                 <a href="#technical-team" className="block px-4 py-2 hover:bg-gray-700">
                   Technical Team
                 </a>
               </li>
               <li>
-                <a href="#management-team" className="block px-4 py-2 hover:bg-gray-700">
-                  Management Team
+                <a href="#cultural-team" className="block px-4 py-2 hover:bg-gray-700">
+                  Cultural Team
+                </a>
+              </li>
+              <li>
+                <a href="#media-team" className="block px-4 py-2 hover:bg-gray-700">
+                  Media Team
+                </a>
+              </li>
+              <li>
+                <a href="#operations-team" className="block px-4 py-2 hover:bg-gray-700">
+                  Operations Team
                 </a>
               </li>
             </ul>
@@ -52,7 +62,7 @@ const Navbar = () => {
           {/* Events (Dropdown) */}
           <li className="relative group">
             <button className="hover:text-gray-400">Events</button>
-            <ul className="absolute left-0 mt-0 hidden group-hover:block bg-gray-800 text-white shadow-lg rounded-lg py-2">
+            <ul className="absolute left-0 mt-0 hidden group-hover:block bg-transparent text-white shadow-lg rounded-lg py-2">
               <li>
                 <a href="#workshops" className="block px-4 py-2 hover:bg-gray-700">
                   Workshops
