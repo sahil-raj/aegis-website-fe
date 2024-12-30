@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import GlowingButton from "./components/Button";
+import GlowingButton from './components/Button';
 import About from './components/About';
 import './globals.css';
 
@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen w-screen bg-black overflow-hidden">
       {/* Navbar */}
-      <div className="absolute top-0 left-0 right-0 z-20">
+      <div className="fixed top-0 left-0 right-0 z-30">
         <Navbar />
       </div>
 
@@ -41,7 +41,7 @@ const Page = () => {
       </div>
 
       {/* About Section */}
-      <div className="mt-20 z-20 relative">
+      <div id="about" className="mt-20 z-20 relative">
         <About />
       </div>
     </div>
