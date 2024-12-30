@@ -1,8 +1,8 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import GlowingButton from './components/Button';
-import About from './components/About';
-import './globals.css';
+import React from "react";
+import Navbar from "@/components/Navbar";
+import GlowingButton from "@/components/Button";
+import About from "@/components/About";
+import "./globals.css";
 
 const Page = () => {
   return (
@@ -26,9 +26,11 @@ const Page = () => {
           Decrypt.Decode.Decipher.
         </h1>
         <p className="max-w-2xl mx-auto text-lg">
-          The Cyber Security Club at DSCE, Bengaluru is dedicated to exploring advanced technologies 
-          and acquiring invaluable knowledge and hands-on experience in cybersecurity through engaging 
-          training sessions, interactive workshops, and collaborative initiatives with like-minded enthusiasts.
+          The Cyber Security Club at DSCE, Bengaluru is dedicated to exploring
+          advanced technologies and acquiring invaluable knowledge and hands-on
+          experience in cybersecurity through engaging training sessions,
+          interactive workshops, and collaborative initiatives with like-minded
+          enthusiasts.
         </p>
         <h1 className="text-2xl font-bold font-Ndot-47 mt-20">
           Unleash Your Cyber Potential
