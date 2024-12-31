@@ -2,6 +2,7 @@
 import React from "react";
 import "../globals.css"
 import Navbar from "@/components/Navbar";
+import BackgroundLayout from "@/components/BackgroundLayout";
 
 const achievements = [
   { "id": 1, "created_at": "31-12-2024", "field": "CTF", "description": "Description", "image": "https://via.placeholder.com/200x200", "achievement": "Title", "achievement_date": "12-12-2024" },
@@ -14,10 +15,11 @@ const Achievements = () => {
   return (
     <>
       <Navbar />
+      <BackgroundLayout>
       <div className="flex items-center justify-center min-h-screen flex-wrap">
         {achievements.map((achievement, i) => {
           return (
-            <div className="max-w-lg w-full rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 bg-gray-900 text-white mt-5 mb-5 me-5 ms-5" key={i}>
+            <div className="max-w-lg w-full rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300 bg-gray-900/30 text-white mt-5 mb-5 me-5 ms-5 backdrop-blur-sm" key={i}>
               {/* <!-- Image --> */}
               <img
                 src="https://via.placeholder.com/300x400"
@@ -25,7 +27,7 @@ const Achievements = () => {
                 className="w-full h-64 object-cover"
               />
               {/* <!-- Content --> */}
-              <div className="p-6">
+              <div className="p-6 backdrop-blur-sm">
                 <h2 className="text-2xl font-bold mb-2">{achievement["achievement"]}</h2>
                 <p className="text-sm mb-4">
                   {achievement["description"]}
@@ -39,6 +41,7 @@ const Achievements = () => {
           )
         })}
       </div>
+      </BackgroundLayout>
     </>
   );
 };

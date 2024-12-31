@@ -1,12 +1,14 @@
 import React from "react";
 import "../globals.css"
 import Navbar from "@/components/Navbar";
+import BackgroundLayout from "@/components/BackgroundLayout";
 
 const content = [{ "id": 1, "event_date": "31-12-2024", "images": ["", "", "","","","","","",""], "title": "title" }, { "id": 2, "event_date": "31-12-2024", "images": ["", "", ""], "title": "title"  }, { "id": 3, "event_date": "31-12-2024", "images": ["", "", ""], "title": "title"  }]
 
 const Gallery = () => {
   return (
     <>
+    <BackgroundLayout>
     <Navbar/>
       <main className="max-w-7xl mx-auto p-6">
         {content.map((event) => {
@@ -31,6 +33,7 @@ const Gallery = () => {
           )
         })}
       </main>
+      </BackgroundLayout>
     </>
   );
 };
