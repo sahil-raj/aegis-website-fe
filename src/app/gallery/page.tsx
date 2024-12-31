@@ -2,7 +2,7 @@ import React from "react";
 import "../globals.css"
 import Navbar from "@/components/Navbar";
 
-let content = [{ "id": 1, "event_date": "31-12-2024", "images": ["", "", "","","","","","",""], "title": "title" }, { "id": 2, "event_date": "31-12-2024", "images": ["", "", ""], "title": "title"  }, { "id": 3, "event_date": "31-12-2024", "images": ["", "", ""], "title": "title"  }]
+const content = [{ "id": 1, "event_date": "31-12-2024", "images": ["", "", "","","","","","",""], "title": "title" }, { "id": 2, "event_date": "31-12-2024", "images": ["", "", ""], "title": "title"  }, { "id": 3, "event_date": "31-12-2024", "images": ["", "", ""], "title": "title"  }]
 
 const Gallery = () => {
   return (

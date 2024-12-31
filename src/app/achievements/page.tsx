@@ -3,7 +3,7 @@ import React from "react";
 import "../globals.css"
 import Navbar from "@/components/Navbar";
 
-let achievements = [{ "id": 1, "created_at": "31-12-2024", "achievement_date": "12-12-2024", "image": "https://via.placeholder.com/200x200", "title": "Title", "description": "Description", "tags": ["tag1", "tag2"] }, { "id": 2, "created_at": "31-12-2024", "achievement_date": "12-12-2024", "image": "https://via.placeholder.com/200x200", "title": "Title", "description": "Description", "tags": ["tag1", "tag2"] }]
+const achievements = [{ "id": 1, "created_at": "31-12-2024", "achievement_date": "12-12-2024", "image": "https://via.placeholder.com/200x200", "title": "Title", "description": "Description", "tags": ["tag1", "tag2"] }, { "id": 2, "created_at": "31-12-2024", "achievement_date": "12-12-2024", "image": "https://via.placeholder.com/200x200", "title": "Title", "description": "Description", "tags": ["tag1", "tag2"] }]
 
 
 const Achievements = () => {
