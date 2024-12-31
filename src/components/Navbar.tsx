@@ -19,7 +19,7 @@ const Navbar = () => {
         <ul className="flex items-center space-x-6">
           {/* Home */}
           <li>
-            <a href="#" className="hover:text-gray-400">
+            <a href="/" className="hover:text-gray-400">
               Home
             </a>
           </li>

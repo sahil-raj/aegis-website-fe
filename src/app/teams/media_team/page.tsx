@@ -1,5 +1,5 @@
 import React from 'react';
-import '../globals.css';
+import '../../globals.css';
 import Navbar from '@/components/Navbar';
 
 const Teams = () => {
@@ -11,7 +11,7 @@ const Teams = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
-            Meet Our Aegis Team
+            The Media Team
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Explore the brilliant minds and dedicated individuals driving our success.
@@ -65,7 +65,7 @@ const Teams = () => {
         </div>
       </div>
     </div>
-  </>
+    </>
   );
 };
 
