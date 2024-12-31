@@ -12,7 +12,7 @@ export const TEAM = [
       "Cryptography",
       "Penetration Testing",
     ],
-    link: "/teams/technical_team",
+    link: "/teams",
   },
   {
     title: "Cultural Team",
@@ -25,7 +25,7 @@ export const TEAM = [
       "Security",
       "UI/UX Design",
     ],
-    link: "/teams/cultural_team",
+    link: "/teams",
   },
   {
     title: "Media Team",
@@ -38,7 +38,7 @@ export const TEAM = [
       "Machine Learning",
       "Blockchain",
     ],
-    link: "/teams/media_team",
+    link: "/teams",
   },
   {
     title: "Operations Team",
@@ -51,7 +51,7 @@ export const TEAM = [
       "Team Coordination",
       "Event Management",
     ],
-    link: "/teams/operations_team",
+    link: "/teams",
   },
 ];
 

@@ -4,7 +4,7 @@ import {Shield, Users, Target, Award} from "lucide-react";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 
-const page = () => {
+const About = () => {
  return (
   <>
   <Navbar/>
@@ -114,4 +114,4 @@ const page = () => {
  );
 };
 
-export default page;
+export default About;
