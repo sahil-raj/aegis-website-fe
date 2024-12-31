@@ -11,6 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
+      <script async src="https://cdn.splitbee.io/sb.js"></script>
     </html>
   )
 }
