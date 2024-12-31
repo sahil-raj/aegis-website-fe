@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import BackgroundLayout from "@/components/BackgroundLayout";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Teams = () => {
   const teamMembers = [
@@ -11,7 +12,8 @@ const Teams = () => {
       last_name: "Wilson",
       team: "Technical",
       description: "Expert in backend development and database design.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 11,
@@ -19,7 +21,8 @@ const Teams = () => {
       last_name: "Taylor",
       team: "Technical",
       description: "Frontend developer passionate about UI/UX.",
-      image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 12,
@@ -27,7 +30,8 @@ const Teams = () => {
       last_name: "Anderson",
       team: "Technical",
       description: "DevOps engineer ensuring system reliability.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400&h=400",
     },
     // Media
     {
@@ -36,7 +40,8 @@ const Teams = () => {
       last_name: "Brown",
       team: "Media",
       description: "Specialist in multimedia content creation.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 5,
@@ -44,7 +49,8 @@ const Teams = () => {
       last_name: "Davis",
       team: "Media",
       description: "Leads social media strategies and campaigns.",
-      image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 6,
@@ -52,7 +58,8 @@ const Teams = () => {
       last_name: "Garcia",
       team: "Media",
       description: "Creative designer with a focus on branding.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400",
     },
     // Cultural
     {
@@ -61,7 +68,11 @@ const Teams = () => {
       last_name: "Clark",
       team: "Cultural",
       description: "Passionate about fostering team culture and engagement.",
-      image: "https://images.unsplash.com/photo-1502764613149-7f1d229e230f?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1502764613149-7f1d229e230f?auto=format&fit=crop&q=80&w=400&h=400",
+      email: "james.wilson@example.com",
+      linkedin: "https://linkedin.com/in/jameswilson",
+      github: "https://github.com/jameswilson",
     },
     {
       id: 2,
@@ -69,7 +80,8 @@ const Teams = () => {
       last_name: "Johnson",
       team: "Cultural",
       description: "Expert in creating inclusive team environments.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 3,
@@ -77,7 +89,8 @@ const Teams = () => {
       last_name: "Lee",
       team: "Cultural",
       description: "Drives creative initiatives and cultural programs.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400&h=400",
     },
     // Operations
     {
@@ -86,7 +99,8 @@ const Teams = () => {
       last_name: "Martinez",
       team: "Operations",
       description: "Ensures smooth day-to-day operations.",
-      image: "https://images.unsplash.com/photo-1502764613149-7f1d229e230f?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1502764613149-7f1d229e230f?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 8,
@@ -94,7 +108,8 @@ const Teams = () => {
       last_name: "Harris",
       team: "Operations",
       description: "Focuses on optimizing workflows.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400",
     },
     {
       id: 9,
@@ -102,7 +117,8 @@ const Teams = () => {
       last_name: "White",
       team: "Operations",
       description: "Handles team logistics and resource management.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400&h=400",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400&h=400",
     },
   ];
 
@@ -110,7 +126,10 @@ const Teams = () => {
     teamMembers
       .filter((member) => member.team === team)
       .map((member) => (
-        <div key={member.id} className="text-center bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-gray-700">
+        <div
+          key={member.id}
+          className="text-center bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-gray-700"
+        >
           <img
             src={member.image}
             alt={`${member.first_name} ${member.last_name}`}
@@ -118,6 +137,38 @@ const Teams = () => {
           />
           <h3 className="text-xl font-bold mb-2">{`${member.first_name} ${member.last_name}`}</h3>
           <p className="text-gray-400">{member.description}</p>
+          <div className="flex justify-center gap-4 mt-4">
+            {member.email && (
+              <a
+                href={`mailto:${member.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                <FaEnvelope size={24} />
+              </a>
+            )}
+            {member.linkedin && (
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                <FaLinkedin size={24} />
+              </a>
+            )}
+            {member.github && (
+              <a
+                href={member.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                <FaGithub size={24} />
+              </a>
+            )}
+          </div>
         </div>
       ));
 
@@ -125,17 +176,23 @@ const Teams = () => {
     <BackgroundLayout>
       <Navbar />
       <div className="container mx-auto px-4 py-20 text-white">
-        <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
+        <h1 className="text-5xl pb-4 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Meet Our Aegis Team
         </h1>
         <h2 className="text-3xl font-bold mb-8">Technical Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Technical")}</div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {renderTeam("Technical")}
+        </div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Media Team</h2>
         <div className="grid md:grid-cols-3 gap-8">{renderTeam("Media")}</div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Cultural Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Cultural")}</div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {renderTeam("Cultural")}
+        </div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Operations Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Operations")}</div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {renderTeam("Operations")}
+        </div>
       </div>
     </BackgroundLayout>
   );

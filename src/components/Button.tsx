@@ -5,7 +5,7 @@ import "./button.css";
 
 const GlowingButton: React.FC = () => {
   const handleClick = (): void => {
-    alert("Button Clicked!");
+    // alert("Button Clicked!");
   };
 
   return (
