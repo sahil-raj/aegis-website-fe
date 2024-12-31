@@ -1,12 +1,14 @@
 import React from 'react';
 import GlowingButton from '@/components/Button';
-import Navbar from '@/components/Navbar'; // Import Navbar
+import Navbar from '@/components/Navbar';
 
 const HomePage = () => {
   return (
-    <div className="relative bg-black min-h-screen w-full overflow-hidden">
+    <div className="relative bg-black min-h-screen w-full overflow-hidden pt-16">
       {/* Navbar */}
-      <Navbar />
+      <header className="fixed top-0 left-0 w-full z-30 bg-black bg-opacity-10 backdrop-blur-md">
+        <Navbar />
+      </header>
 
       {/* Background Elements */}
       <div className="absolute inset-0">
