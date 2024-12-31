@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
+  { href: "/home", label: "Home" }, // Changed to "/"
   { href: "/about", label: "About Us" },
-  { href: "/teams", label: "Teams" }, // Added Teams
-  { href: "/events", label: "Events"},
+  { href: "/teams", label: "Teams" },
+  { href: "/events", label: "Events" },
   { href: "/achievements", label: "Achievements" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/blogs", label: "Blogs" }, // Added Blogs
+  { href: "/blogs", label: "Blogs" },
 ];
 
 const Navbar = () => {

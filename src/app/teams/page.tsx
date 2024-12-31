@@ -123,7 +123,10 @@ const Teams = () => {
 
   return (
     <BackgroundLayout>
-      <Navbar />
+      {/* Navbar */}
+      <header className="fixed top-0 left-0 w-full z-30 bg-black bg-opacity-10 backdrop-blur-md">
+        <Navbar />
+      </header>
       <div className="container mx-auto px-4 py-20 text-white">
         <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Meet Our Aegis Team

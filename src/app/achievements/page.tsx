@@ -14,7 +14,10 @@ const achievements = [
 const Achievements = () => {
   return (
     <>
-      <Navbar />
+      {/* Navbar */}
+      <header className="fixed top-0 left-0 w-full z-30 bg-black bg-opacity-10 backdrop-blur-md">
+        <Navbar />
+      </header>
       <BackgroundLayout>
       <div className="flex items-center justify-center min-h-screen flex-wrap">
         {achievements.map((achievement, i) => {
