@@ -1,4 +1,4 @@
-// "use client";
+//"use client";
 import React from "react";
 import {Shield, Users, Target, Award} from "lucide-react";
 import "../globals.css";
