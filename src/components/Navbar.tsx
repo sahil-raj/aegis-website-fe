@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link"; // Import Link from next/link
 
 const Navbar = () => {
   return (
@@ -19,57 +20,61 @@ const Navbar = () => {
         <ul className="flex items-center space-x-6">
           {/* Home */}
           <li>
-            <a href="/" className="hover:text-gray-400">
+            <Link href="/" className="hover:text-gray-400">
               Home
-            </a>
+            </Link>
           </li>
 
           {/* About Us */}
           <li>
-            <a href="/about" className="hover:text-gray-400">
+            <Link href="/about" className="hover:text-gray-400">
               About Us
-            </a>
+            </Link>
           </li>
 
-          {/* Teams*/}
+          {/* Teams */}
           <li>
-            <a href="/teams" className="hover:text-gray-400">
+            <Link href="/teams" className="hover:text-gray-400">
               Teams
-            </a>
+            </Link>
           </li>
 
-          {/* Events*/}
+          {/* Events */}
           <li>
-            <a href="/events" className="hover:text-gray-400">
+            <Link href="/events" className="hover:text-gray-400">
               Events
-            </a>
+            </Link>
           </li>
-          {/* Achievements*/}
+
+          {/* Achievements */}
           <li>
-            <a href="/achievements" className="hover:text-gray-400">
+            <Link href="/achievements" className="hover:text-gray-400">
               Achievements
-            </a>
+            </Link>
           </li>
-          {/* Gallery*/}
+
+          {/* Gallery */}
           <li>
-            <a href="/gallery" className="hover:text-gray-400">
+            <Link href="/gallery" className="hover:text-gray-400">
               Gallery
-            </a>
+            </Link>
           </li>
-          {/* Blogs*/}
+
+          {/* Blogs */}
           <li>
-            <a href="/blogs" className="hover:text-gray-400">
+            <Link href="/blogs" className="hover:text-gray-400">
               Blogs
-            </a>
+            </Link>
           </li>
-          {/* Sign In*/}
+
+          {/* Sign In */}
           <li>
-            <a
+            <Link
               href="/login"
               className="px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition duration-300"
             >
               Sign In
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
