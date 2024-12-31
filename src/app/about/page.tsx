@@ -1,7 +1,7 @@
 import React from "react";
 import { Shield, Target, Code, Brain, Network, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import BackgroundLayout from "@/components/BackgroundLayout";
-import "../globals.css";
+
 import Navbar from "@/components/Navbar";
 
 const About = () => {

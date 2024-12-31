@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import GlowingButton from "@/components/Button";
 import About from "@/components/About";
-import "./globals.css";
+// import "./globals.css";
 
 const Page = () => {
   return (

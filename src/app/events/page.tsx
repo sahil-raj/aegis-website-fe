@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import BackgroundLayout from "@/components/BackgroundLayout";
-import "../globals.css";
 
 const Events = () => {
   const events = [
