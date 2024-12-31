@@ -89,7 +89,7 @@ const About = () => {
         <Shield className="w-12 h-12 mx-auto mb-4 text-blue-400" />
         <h3 className="text-xl font-bold mb-2">Security First</h3>
         <p className="text-gray-300">
-         Unwavering commitment to protecting our clients' digital assets
+         Unwavering commitment to protecting our clients&apos; digital assets
         </p>
        </div>
        <div className="text-center">
