@@ -28,29 +28,29 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuOpen && !event.target.closest('nav')) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuOpen && !(event.target as HTMLElement).closest("nav")) {
         setMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
   const toggleMenu = useCallback(() => {
-    setMenuOpen(prev => !prev);
+    setMenuOpen((prev) => !prev);
     if (dropdownOpen) setDropdownOpen(false);
   }, [dropdownOpen]);
 
-  const toggleDropdown = useCallback((e) => {
+  const toggleDropdown = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setDropdownOpen(prev => !prev);
+    setDropdownOpen((prev) => !prev);
   }, []);
 
   return (
@@ -85,6 +85,7 @@ const Navbar = () => {
               className="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-2"
               onClick={toggleMenu}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -97,14 +98,20 @@ const Navbar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  d={
+                    menuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
                 />
               </svg>
             </button>
 
             <ul
               className={`flex flex-col lg:flex-row items-center lg:space-x-8 absolute lg:static bg-black lg:bg-transparent rounded-lg top-16 lg:top-auto left-0 w-full lg:w-auto p-6 lg:p-0 transition-all duration-300 ease-in-out transform ${
-                menuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0 pointer-events-none lg:translate-y-0 lg:opacity-100 lg:pointer-events-auto"
+                menuOpen
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-2 opacity-0 pointer-events-none lg:translate-y-0 lg:opacity-100 lg:pointer-events-auto"
               }`}
             >
               {navLinks.map(({ href, label }) => (
