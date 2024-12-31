@@ -3,8 +3,8 @@
 import React from "react";
 import "./button.css";
 
-const GlowingButton = () => {
-  const handleClick = () => {
+const GlowingButton: React.FC = () => {
+  const handleClick = (): void => {
     alert("Button Clicked!");
   };
 
