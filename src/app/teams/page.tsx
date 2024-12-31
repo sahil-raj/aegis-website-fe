@@ -2,9 +2,25 @@ import React from 'react';
 import '../globals.css';
 import Navbar from '@/components/Navbar';
 
+// Define the TeamMember type
+type TeamMember = {
+  id: number;
+  created_at: Date;
+  first_name: string;
+  last_name: string;
+  pet_name: string;
+  team: 'Cultural' | 'Media' | 'Operations' | 'Technical';
+  description: string;
+  tags: string[];
+  email: string;
+  linkedin: string;
+  github: string;
+  image: string;
+};
+
 const Teams = () => {
   // Team members data
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     // Cultural Team
     {
       id: 1,
@@ -180,7 +196,7 @@ const Teams = () => {
   ];
 
   // Render team sections
-  const renderTeam = (team) =>
+  const renderTeam = (team: TeamMember['team']) =>
     teamMembers
       .filter((member) => member.team === team)
       .map((member) => (
