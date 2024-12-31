@@ -8,23 +8,17 @@ const navLinks = [
   { href: "#about", label: "About Us" },
   { href: "/achievements", label: "Achievements" },
   { href: "/gallery", label: "Gallery" },
-];
-
-const eventLinks = [
-  { href: "/events/decipher1.0", label: "Decipher 1.0" },
-  { href: "/events/ctf1.0", label: "CTF 1.0" },
-  { href: "/events/foodwalk", label: "Food Walk" },
+  { href: "/teams", label: "Teams" }, // Added Teams
+  { href: "/blogs", label: "Blogs" }, // Added Blogs
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setMenuOpen(false);
-        setDropdownOpen(false);
       }
     };
 
@@ -45,12 +39,6 @@ const Navbar = () => {
 
   const toggleMenu = useCallback(() => {
     setMenuOpen((prev) => !prev);
-    if (dropdownOpen) setDropdownOpen(false);
-  }, [dropdownOpen]);
-
-  const toggleDropdown = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setDropdownOpen((prev) => !prev);
   }, []);
 
   return (
@@ -124,48 +112,6 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-
-              <li className="relative group">
-                <button
-                  onClick={toggleDropdown}
-                  className="block lg:inline-flex items-center hover:text-gray-400 transition duration-200 py-2 lg:py-0 w-full lg:w-auto"
-                >
-                  <span>Events</span>
-                  <svg
-                    className={`ml-2 h-4 w-4 transform transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180" : ""
-                    } lg:group-hover:rotate-180`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-
-                <div className="hidden lg:block absolute h-4 w-full -bottom-4"></div>
-
-                <div
-                  className={`lg:absolute left-0 lg:mt-4 w-48 bg-gray-800 rounded-lg shadow-xl border border-gray-700 z-50 ${
-                    dropdownOpen ? "block" : "hidden"
-                  } lg:hidden lg:group-hover:block transition-all duration-200 ease-in-out`}
-                >
-                  {eventLinks.map(({ href, label }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="block px-4 py-3 text-sm hover:bg-gray-700 transition duration-200 first:rounded-t-lg last:rounded-b-lg"
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              </li>
 
               <li className="mt-4 lg:mt-0 lg:ml-4">
                 <Link

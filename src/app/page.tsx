@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Home from "../components/Home";
 import About from "../components/About";
-import GetInTouch from "../components/GetInTouch";
 import "./globals.css";
 
 const Page: React.FC = () => {
@@ -29,15 +28,6 @@ const Page: React.FC = () => {
         {/* Home and About Section (Continuous) */}
         <section id="home" className="relative z-20">
           <Home />
-        </section>
-
-        <section id="about" className="relative z-20">
-          <About />
-        </section>
-
-        {/* Get In Touch Section */}
-        <section id="get-in-touch" className="relative z-20">
-          <GetInTouch />
         </section>
       </main>
     </div>
