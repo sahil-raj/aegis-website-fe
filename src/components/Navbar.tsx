@@ -5,10 +5,11 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About Us" },
+  { href: "/about", label: "About Us" },
+  { href: "/teams", label: "Teams" }, // Added Teams
+  { href: "/events", label: "Events"},
   { href: "/achievements", label: "Achievements" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/teams", label: "Teams" }, // Added Teams
   { href: "/blogs", label: "Blogs" }, // Added Blogs
 ];
 

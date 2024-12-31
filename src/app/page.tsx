@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
-import Navbar from "../components/Navbar";
-import Home from "../components/Home";
-import About from "../components/About";
+import Navbar from "@/components/Navbar";
+import GlowingButton from "@/components/Button";
+import About from "@/components/About";
 import "./globals.css";
 
 const Page: React.FC = () => {
