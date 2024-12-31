@@ -12,10 +12,10 @@ export const TEAM = [
       "Cryptography",
       "Penetration Testing",
     ],
-    link: "#",
+    link: "/teams",
   },
   {
-    title: "Development Team",
+    title: "Cultural Team",
     image: "/team2.png",
     description:
       "The Development Team focuses on creating robust and scalable solutions for the club's cyber defense tools.",
@@ -25,10 +25,10 @@ export const TEAM = [
       "Security",
       "UI/UX Design",
     ],
-    link: "#",
+    link: "/teams",
   },
   {
-    title: "Research Team",
+    title: "Media Team",
     image: "/team3.png",
     description:
       "The Research Team is responsible for conducting in-depth research into the latest cyber threats and developing new methodologies to counter them.",
@@ -38,7 +38,7 @@ export const TEAM = [
       "Machine Learning",
       "Blockchain",
     ],
-    link: "#",
+    link: "/teams",
   },
   {
     title: "Operations Team",
@@ -51,7 +51,7 @@ export const TEAM = [
       "Team Coordination",
       "Event Management",
     ],
-    link: "#",
+    link: "/teams",
   },
 ];
 
