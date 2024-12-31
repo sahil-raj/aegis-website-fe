@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/teams", label: "Teams" }, // Added Teams
-  { href: "/events", label: "Events"},
+  { href: "/events", label: "Events" },
   { href: "/achievements", label: "Achievements" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/blogs", label: "Blogs" }, // Added Blogs
+  // { href: "/blogs", label: "Blogs" }, // Added Blogs
 ];
 
 const Navbar = () => {
@@ -114,14 +114,14 @@ const Navbar = () => {
                 </li>
               ))}
 
-              <li className="mt-4 lg:mt-0 lg:ml-4">
+              {/* <li className="mt-4 lg:mt-0 lg:ml-4">
                 <Link
                   href="/login"
                   className="px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 block text-center"
                 >
                   Sign In
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
