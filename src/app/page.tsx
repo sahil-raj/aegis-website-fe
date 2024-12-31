@@ -2,8 +2,7 @@
 
 import React from "react";
 import Navbar from "@/components/Navbar";
-import GlowingButton from "@/components/Button";
-import About from "@/components/About";
+import Home from "@/components/Home"
 import "./globals.css";
 
 const Page: React.FC = () => {

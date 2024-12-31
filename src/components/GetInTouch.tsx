@@ -1,34 +1,30 @@
-import React from "react";
+import Link from 'next/link'
+import { Mail, Instagram, Linkedin } from 'lucide-react'
 
-const GetInTouch: React.FC = () => {
+export default function GetInTouchFooter() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white py-16">
-      <h2 className="text-4xl font-bold mb-8">Get in Touch</h2>
-      <form className="flex flex-col items-center gap-4 w-full max-w-md">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-        />
-        <textarea
-          placeholder="Your Message"
-          rows={5}
-          className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-        ></textarea>
-        <button
-          type="submit"
-          className="px-6 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
-  );
-};
+    <footer className="bg-gray-100 py-8">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl font-bold text-center mb-6">Get in Touch</h2>
+        <div className="flex justify-center space-x-8">
+          <Link href="mailto:your-email@example.com" className="flex items-center hover:text-blue-600 transition-colors">
+            <Mail className="w-6 h-6 mr-2" />
+            <span className="sr-only">Email</span>
+          </Link>
+          <Link href="https://www.instagram.com/your-username" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-pink-600 transition-colors">
+            <Instagram className="w-6 h-6 mr-2" />
+            <span className="sr-only">Instagram</span>
+          </Link>
+          <Link href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-800 transition-colors">
+            <Linkedin className="w-6 h-6 mr-2" />
+            <span className="sr-only">LinkedIn</span>
+          </Link>
+        </div>
+        <p className="text-center mt-6 text-sm text-gray-600">
+          © {new Date().getFullYear()} AEGIS. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  )
+}
 
-export default GetInTouch;
