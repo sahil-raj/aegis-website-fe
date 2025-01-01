@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LoginForm } from "../../components/LoginForm";
+import { SignUpForm } from "../../components/SignUpForm";
 import "../globals.css";
 import Logo from "../../../public/Aegis_Logo.png";
 import Link from "next/link";
@@ -18,9 +18,9 @@ export default function Page() {
           sizes="(max-width: 768px) 60px, 80px" // Responsive sizing
         />
       </Link>
-      {/* Login form */}
+      {/* sign Up form */}
       <div className="w-full max-w-sm ">
-        <LoginForm />
+        <SignUpForm />
       </div>
     </div>
   );
