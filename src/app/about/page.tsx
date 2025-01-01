@@ -1,5 +1,14 @@
 import React from "react";
-import { Shield, Target, Code, Brain, Network, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import {
+  Shield,
+  Target,
+  Code,
+  Brain,
+  Network,
+  Instagram,
+  Twitter,
+  Linkedin,
+} from "lucide-react";
 import BackgroundLayout from "@/components/BackgroundLayout";
 
 import Navbar from "@/components/Navbar";
@@ -8,22 +17,26 @@ const About = () => {
   const activities = [
     {
       title: "Workshops",
-      description: "Hands-on sessions on ethical hacking, cybersecurity tools, and techniques.",
+      description:
+        "Hands-on sessions on ethical hacking, cybersecurity tools, and techniques.",
       icon: <Brain className="w-12 h-12 text-blue-400 mb-4" />,
     },
     {
-      title: "Hackathons",
-      description: "Exciting 24-hour coding events to solve real-world cybersecurity challenges.",
+      title: "CTFs",
+      description:
+        "Exciting Capture The Flag challenges that sharpen your cybersecurity instincts through hands-on tasks.",
       icon: <Code className="w-12 h-12 text-teal-400 mb-4" />,
     },
     {
       title: "Training Sessions",
-      description: "Weekly sessions on topics like cryptography, penetration testing, and more.",
+      description:
+        "Weekly sessions on topics like cryptography, penetration testing, and more.",
       icon: <Shield className="w-12 h-12 text-blue-400 mb-4" />,
     },
     {
       title: "Outreach Programs",
-      description: "Spreading awareness about cybersecurity through seminars and community events.",
+      description:
+        "Spreading awareness about cybersecurity through seminars and community events.",
       icon: <Network className="w-12 h-12 text-teal-400 mb-4" />,
     },
   ];
@@ -37,12 +50,13 @@ const About = () => {
       <div className="container mx-auto px-4 py-20 text-white overflow-x-hidden">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
+          <h1 className="text-5xl pb-2 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
             About Aegis
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Pioneering the future of cybersecurity with innovative solutions
-            that protect and empower students to explore, learn, and excel in the field of cybersecurity.
+            that protect and empower students to explore, learn, and excel in
+            the field of cybersecurity.
           </p>
         </div>
 
@@ -70,7 +84,9 @@ const About = () => {
 
         {/* Club Activities Section */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Activities</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Activities
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {activities.map((activity, index) => (
               <div
@@ -90,7 +106,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-6">Follow Us</h2>
           <div className="flex justify-center space-x-6">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/dept-of-computer-science-and-cyber-security-b09233319/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-teal-400 transition duration-300 flex flex-col items-center"
@@ -108,22 +124,13 @@ const About = () => {
               <span className="text-sm text-gray-300 mt-2">Twitter</span>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/cscy_dsce/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-teal-400 transition duration-300 flex flex-col items-center"
             >
               <Instagram className="w-8 h-8" />
               <span className="text-sm text-gray-300 mt-2">Instagram</span>
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-teal-400 transition duration-300 flex flex-col items-center"
-            >
-              <Youtube className="w-8 h-8" />
-              <span className="text-sm text-gray-300 mt-2">YouTube</span>
             </a>
           </div>
         </div>

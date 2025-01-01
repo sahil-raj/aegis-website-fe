@@ -25,7 +25,9 @@ const Page: React.FC = () => {
       </header>
 
       {/* Content Sections */}
-      <main className="relative z-20 pt-16"> {/* Add padding to avoid overlapping with the fixed navbar */}
+      <main className="relative z-20 pt-16">
+        {" "}
+        {/* Add padding to avoid overlapping with the fixed navbar */}
         {/* Home and About Section (Continuous) */}
         <section id="home" className="relative z-20">
           <Home />
