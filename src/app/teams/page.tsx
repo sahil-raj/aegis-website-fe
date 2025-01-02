@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient";
-import { TeamMember } from "../../types/TeamMember";
+import { supabase } from "@/lib/supabaseClient";
+import { TeamMember } from "@/types/TeamMember";
 import Navbar from "@/components/Navbar";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
