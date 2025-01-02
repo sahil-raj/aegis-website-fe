@@ -9,6 +9,11 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
+// Define a type for the rolePriority mapping
+type RolePriority = {
+  [key: string]: number;
+};
+
 const Teams = () => {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -37,13 +42,20 @@ const Teams = () => {
   }, []);
 
   // Dynamically determine the role from the database
-  const getRole = (member: TeamMember) => {
-    return member.role || "Member";  // Fallback to "Member" if no role is provided
+  const getRole = (member: TeamMember): string => {
+    const role = member.role?.trim().toLowerCase() || "member"; // Normalize to lowercase
+    if (role === "lead") return "Lead";
+    if (role === "co-lead" || role === "colead" || role === "co lead") return "Co-Lead"; // Handle co-lead variations
+    return "Member"; // Default to Member
   };
 
   const renderTeam = (team: string) => {
-    // Sort the team members by role priority: Lead > Co-Lead > Member
-    const rolePriority = { Lead: 1, "Co-Lead": 2, Member: 3 };
+    // Define the role priority mapping with explicit types
+    const rolePriority: RolePriority = {
+      Lead: 1,
+      "Co-Lead": 2,
+      Member: 3,
+    };
 
     const sortedTeamMembers = teamMembers
       .filter((member) => member.team === team)
