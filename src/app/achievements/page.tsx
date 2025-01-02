@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import { supabase } from "@/lib/supabaseClient";
 import { AchievementError } from "@/types/Achievements";
+import Image from "next/image";
 
 export default function Achievements() {
   const [achievements, setAchievements] =
@@ -60,14 +61,21 @@ export default function Achievements() {
   }, []);
 
   if (loading) {
-    return <div className="text-center text-white py-20">Loading...</div>;
+    return (
+      <>
+        <BackgroundLayout>
+          <Navbar />
+          <div className="text-center mt-20 text-white py-20">Loading...</div>
+        </BackgroundLayout>
+      </>
+    );
   }
 
   return (
     <BackgroundLayout>
       <Navbar />
-      <div className="container mx-auto px-4 py-20 text-white">
-        <h1 className="text-5xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
+      <div className="container overflow-x-hidden mx-auto px-4 py-20 text-white">
+        <h1 className="text-5xl font-bold mt-10 mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Our Achievements
         </h1>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,14 +84,16 @@ export default function Achievements() {
               key={achievement.id}
               className="bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-blue-400"
             >
-              <div className="relative w-full h-48">
-                <img
+              <div className="relative w-full scale-90 h-72 md:h-96">
+                <Image
                   src={achievement.image}
+                  width={800}
+                  height={600}
                   alt={achievement.achievement}
-                  className="transition-transform duration-300 hover:scale-105"
+                  className="transition-transform w-full h-full rounded-xl object-cover object-center duration-300 hover:scale-105"
                 />
               </div>
-              <div className="p-4">
+              <div className="px-4 pb-4 pt-2">
                 <h3 className="text-xl font-bold mb-2">
                   {achievement.achievement}
                 </h3>

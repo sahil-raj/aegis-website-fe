@@ -30,8 +30,8 @@ const Gallery = () => {
   return (
     <BackgroundLayout>
       <Navbar />
-      <div className="container mx-auto px-4 py-10 md:py-20 text-white">
-        <h1 className="text-5xl font-bold mb-10 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
+      <div className="container overflow-x-hidden mx-auto px-4 py-10 md:py-20 text-white">
+        <h1 className="text-5xl font-bold mt-10 mb-10 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Event Gallery
         </h1>
         {content.map((event) => (

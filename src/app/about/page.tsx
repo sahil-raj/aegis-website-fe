@@ -35,7 +35,7 @@ const About = () => {
   return (
     <BackgroundLayout>
       <Navbar />
-      <div className="container mx-auto px-4 py-20 text-white overflow-x-hidden">
+      <div className="container mt-10 mx-auto px-4 py-20 text-white overflow-x-hidden">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl pb-2 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
@@ -71,7 +71,7 @@ const About = () => {
         </div>
 
         {/* Club Activities Section */}
-        <div className="mb-20">
+        <div className="mb-2">
           <h2 className="text-3xl font-bold text-center mb-12">
             Our Activities
           </h2>
