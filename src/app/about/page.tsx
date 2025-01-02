@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Shield,
-  Target,
-  Code,
-  Brain,
-  Network,
-  Instagram,
-  Twitter,
-  Linkedin,
-} from "lucide-react";
+import { Shield, Target, Code, Brain, Network } from "lucide-react";
 import BackgroundLayout from "@/components/BackgroundLayout";
 
 import Navbar from "@/components/Navbar";
