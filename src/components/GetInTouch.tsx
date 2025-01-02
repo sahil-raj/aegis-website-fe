@@ -27,4 +27,4 @@ export default function GetInTouchFooter() {
     </footer>
   )
 }
-
+//Updated GetInTouch Footer
