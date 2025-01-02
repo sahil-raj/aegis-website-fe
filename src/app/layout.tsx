@@ -1,18 +1,22 @@
-import './globals.css';
+import "./globals.css";
 export const metadata = {
-  title: 'Aegis',
-  description: 'Aegis Invictus',
-}
+  title: "Aegis",
+  description: "Aegis Invictus",
+};
+import GetInTouchFooter from "@/components/GetInTouch";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <GetInTouchFooter />
+      </body>
       <script async src="https://cdn.splitbee.io/sb.js"></script>
     </html>
-  )
+  );
 }

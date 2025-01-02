@@ -97,40 +97,6 @@ const About = () => {
             ))}
           </div>
         </div>
-
-        {/* Social Media Bar */}
-        <div className="bg-gray-800/30 rounded-2xl p-8 backdrop-blur-sm border border-gray-700">
-          <h2 className="text-3xl font-bold text-center mb-6">Follow Us</h2>
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://www.linkedin.com/in/dept-of-computer-science-and-cyber-security-b09233319/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-teal-400 transition duration-300 flex flex-col items-center"
-            >
-              <Linkedin className="w-8 h-8" />
-              <span className="text-sm text-gray-300 mt-2">LinkedIn</span>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-teal-400 transition duration-300 flex flex-col items-center"
-            >
-              <Twitter className="w-8 h-8" />
-              <span className="text-sm text-gray-300 mt-2">Twitter</span>
-            </a>
-            <a
-              href="https://www.instagram.com/cscy_dsce/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-teal-400 transition duration-300 flex flex-col items-center"
-            >
-              <Instagram className="w-8 h-8" />
-              <span className="text-sm text-gray-300 mt-2">Instagram</span>
-            </a>
-          </div>
-        </div>
       </div>
     </BackgroundLayout>
   );
