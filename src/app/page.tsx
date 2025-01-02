@@ -20,9 +20,9 @@ const Page: React.FC = () => {
       </div>
 
       {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full z-30 bg-black bg-opacity-10 backdrop-blur-md">
-        <Navbar />
-      </header>
+      {/* <header className="fixed top-0 left-0 w-full z-30 bg-black bg-opacity-10 backdrop-blur-md"> */}
+      <Navbar />
+      {/* </header> */}
 
       {/* Content Sections */}
       <main className="relative z-20 pt-16">

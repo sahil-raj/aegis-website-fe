@@ -43,7 +43,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 left-0 right-0 z-50">
+    <div className="right-0 z-50 fixed top-0 left-0 w-full bg-black bg-opacity-10 backdrop-blur-md">
       <nav className="mx-1 my-1">
         <div className="bg-black/0 rounded-2xl text-white backdrop-blur-sm">
           <div className="container mx-auto px-6 py-4 flex items-center justify-between">
