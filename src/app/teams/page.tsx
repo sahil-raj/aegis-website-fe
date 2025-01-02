@@ -45,7 +45,8 @@ const Teams = () => {
   const getRole = (member: TeamMember): string => {
     const role = member.role?.trim().toLowerCase() || "member"; // Normalize to lowercase
     if (role === "lead") return "Lead";
-    if (role === "co-lead" || role === "colead" || role === "co lead") return "Co-Lead"; // Handle co-lead variations
+    if (role === "co-lead" || role === "colead" || role === "co lead")
+      return "Co-Lead"; // Handle co-lead variations
     return "Member"; // Default to Member
   };
 
@@ -82,17 +83,26 @@ const Teams = () => {
         <p className="text-gray-400">{member.description}</p>
         <div className="flex justify-center gap-4 mt-4">
           {member.email && (
-            <Link href={`mailto:${member.email}`} className="text-blue-400 hover:text-blue-300">
+            <Link
+              href={`mailto:${member.email}`}
+              className="text-blue-400 hover:text-blue-300"
+            >
               <FaEnvelope size={24} />
             </Link>
           )}
           {member.linkedin && (
-            <Link href={member.linkedin} className="text-blue-400 hover:text-blue-300">
+            <Link
+              href={member.linkedin}
+              className="text-blue-400 hover:text-blue-300"
+            >
               <FaLinkedin size={24} />
             </Link>
           )}
           {member.github && (
-            <Link href={member.github} className="text-blue-400 hover:text-blue-300">
+            <Link
+              href={member.github}
+              className="text-blue-400 hover:text-blue-300"
+            >
               <FaGithub size={24} />
             </Link>
           )}
@@ -127,18 +137,24 @@ const Teams = () => {
   return (
     <BackgroundLayout>
       <Navbar />
-      <div className="container mx-auto px-4 py-20 text-white">
-        <h1 className="text-5xl pb-4 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
+      <div className="container overflow-x-hidden mx-auto px-4 py-20 text-white">
+        <h1 className="text-5xl pb-4 mt-10 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Meet Our Aegis Team
         </h1>
         <h2 className="text-3xl font-bold mb-8">Technical Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Technical")}</div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {renderTeam("Technical")}
+        </div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Media Team</h2>
         <div className="grid md:grid-cols-3 gap-8">{renderTeam("Media")}</div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Cultural Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Cultural")}</div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {renderTeam("Cultural")}
+        </div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Operations Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Operations")}</div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {renderTeam("Operations")}
+        </div>
       </div>
     </BackgroundLayout>
   );
