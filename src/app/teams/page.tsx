@@ -11,64 +11,47 @@ import Image from "next/image";
 
 const Teams = () => {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data, error } = await supabase.from("team_members").select("*");
+      try {
+        // Fetching data from the Supabase team_members table dynamically
+        const { data, error } = await supabase.from("team_members").select("*");
 
-      if (error) {
-        console.error("Error fetching data:", error);
-      } else {
-        console.log("Fetched team members:", data); // Debugging log to inspect fetched data
+        if (error) {
+          throw new Error(error.message);
+        }
+
         setTeamMembers(data || []);
+      } catch (err) {
+        setError("Error fetching team members.");
+        console.error(err);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
-  const getRole = (member: TeamMember, team: string) => {
-    // Trim any extra whitespace or newline characters from first_name and last_name
-    const firstName = member.first_name.trim();
-    const lastName = member.last_name.trim();
-
-    // Ensure the correct role for Shyam Bharadwaj in Media team
-    if (firstName === "Shyam" && lastName === "Bharadwaj" && team === "Media") {
-      console.log("Assigning Shyam Bharadwaj as Lead!"); // Debugging log
-      return "Lead"; // Explicitly set to Lead for Media team
-    } else if (firstName === "Sahil" && lastName === "Raj") {
-      return "Lead";
-    } else if (firstName === "R" && lastName === "Aswin") {
-      return "Co-Lead";
-    } else if (firstName === "Harika" && lastName === "T" && team === "Cultural") {
-      return "Lead";
-    } else if (firstName === "UMME" && lastName === "AAMINA A") {
-      return "Co-Lead";
-    } else if (firstName === "Likitha") {
-      return "Lead";
-    } else if (firstName === "Sanjit") {
-      return "Co-Lead";
-    } else if (firstName === "Dharaneesh" && lastName === "Kuruba") {
-      return "Member";
-    }
-    return "Member";
+  // Dynamically determine the role from the database
+  const getRole = (member: TeamMember) => {
+    return member.role || "Member";  // Fallback to "Member" if no role is provided
   };
 
   const renderTeam = (team: string) => {
+    // Sort the team members by role priority: Lead > Co-Lead > Member
+    const rolePriority = { Lead: 1, "Co-Lead": 2, Member: 3 };
+
     const sortedTeamMembers = teamMembers
       .filter((member) => member.team === team)
-      .map((member) => {
-        const role = getRole(member, team);
-        console.log(`Assigned role for ${member.first_name} ${member.last_name}: ${role}`); // Debugging log
-        return {
-          ...member,
-          role,
-        };
-      })
-      .sort((a, b) => {
-        const rolePriority = { Lead: 1, "Co-Lead": 2, Member: 3 };
-        return rolePriority[a.role] - rolePriority[b.role];
-      });
+      .map((member) => ({
+        ...member,
+        role: getRole(member),
+      }))
+      .sort((a, b) => rolePriority[a.role] - rolePriority[b.role]);
 
     return sortedTeamMembers.map((member) => (
       <div
@@ -87,26 +70,17 @@ const Teams = () => {
         <p className="text-gray-400">{member.description}</p>
         <div className="flex justify-center gap-4 mt-4">
           {member.email && (
-            <Link
-              href={`mailto:${member.email}`}
-              className="text-blue-400 hover:text-blue-300"
-            >
+            <Link href={`mailto:${member.email}`} className="text-blue-400 hover:text-blue-300">
               <FaEnvelope size={24} />
             </Link>
           )}
           {member.linkedin && (
-            <Link
-              href={member.linkedin}
-              className="text-blue-400 hover:text-blue-300"
-            >
+            <Link href={member.linkedin} className="text-blue-400 hover:text-blue-300">
               <FaLinkedin size={24} />
             </Link>
           )}
           {member.github && (
-            <Link
-              href={member.github}
-              className="text-blue-400 hover:text-blue-300"
-            >
+            <Link href={member.github} className="text-blue-400 hover:text-blue-300">
               <FaGithub size={24} />
             </Link>
           )}
@@ -116,6 +90,28 @@ const Teams = () => {
     ));
   };
 
+  if (loading) {
+    return (
+      <BackgroundLayout>
+        <Navbar />
+        <div className="container mx-auto px-4 py-20 text-white text-center">
+          <h2 className="text-3xl">Loading team members...</h2>
+        </div>
+      </BackgroundLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <BackgroundLayout>
+        <Navbar />
+        <div className="container mx-auto px-4 py-20 text-white text-center">
+          <h2 className="text-3xl">{error}</h2>
+        </div>
+      </BackgroundLayout>
+    );
+  }
+
   return (
     <BackgroundLayout>
       <Navbar />
@@ -124,19 +120,13 @@ const Teams = () => {
           Meet Our Aegis Team
         </h1>
         <h2 className="text-3xl font-bold mb-8">Technical Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {renderTeam("Technical")}
-        </div>
+        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Technical")}</div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Media Team</h2>
         <div className="grid md:grid-cols-3 gap-8">{renderTeam("Media")}</div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Cultural Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {renderTeam("Cultural")}
-        </div>
+        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Cultural")}</div>
         <h2 className="text-3xl font-bold mb-8 mt-16">Operations Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {renderTeam("Operations")}
-        </div>
+        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Operations")}</div>
       </div>
     </BackgroundLayout>
   );
