@@ -12,6 +12,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="shortcut icon"
+          href="/favicon/favicon.ico"
+          type="image/x-icon"
+        />
+      </head>
       <body className="overflow-x-hidden">
         {children}
         <GetInTouchFooter />
