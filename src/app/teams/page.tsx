@@ -9,7 +9,6 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
-// Define a type for the rolePriority mapping
 type RolePriority = {
   [key: string]: number;
 };
@@ -22,13 +21,8 @@ const Teams = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetching data from the Supabase team_members table dynamically
         const { data, error } = await supabase.from("team_members").select("*");
-
-        if (error) {
-          throw new Error(error.message);
-        }
-
+        if (error) throw new Error(error.message);
         setTeamMembers(data || []);
       } catch (err) {
         setError("Error fetching team members.");
@@ -41,21 +35,33 @@ const Teams = () => {
     fetchData();
   }, []);
 
-  // Dynamically determine the role from the database
   const getRole = (member: TeamMember): string => {
     const role = member.role?.trim().toLowerCase() || "member"; // Normalize to lowercase
-    if (role === "lead") return "Lead";
-    if (role === "co-lead" || role === "colead" || role === "co lead")
-      return "Co-Lead"; // Handle co-lead variations
-    return "Member"; // Default to Member
+    switch (role) {
+      case "lead":
+        return "Lead";
+      case "co-lead":
+      case "colead":
+      case "co lead":
+        return "Co-Lead";
+      case "club lead":
+        return "Club Lead";
+      case "club co-lead":
+      case "club colead":
+      case "club co lead":
+        return "Club Co-Lead";
+      default:
+        return "Member";
+    }
   };
 
   const renderTeam = (team: string) => {
-    // Define the role priority mapping with explicit types
     const rolePriority: RolePriority = {
-      Lead: 1,
-      "Co-Lead": 2,
-      Member: 3,
+      "Club Lead": 1,
+      "Club Co-Lead": 2,
+      Lead: 3,
+      "Co-Lead": 4,
+      Member: 5,
     };
 
     const sortedTeamMembers = teamMembers
@@ -141,7 +147,9 @@ const Teams = () => {
         <h1 className="text-5xl pb-4 mt-10 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Meet Our Aegis Team
         </h1>
-        <h2 className="text-3xl font-bold mb-8">Technical Team</h2>
+        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Club")}</div>
+        {/* Other teams */}
+        <h2 className="text-3xl font-bold mb-8 mt-16">Technical Team</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {renderTeam("Technical")}
         </div>
