@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { FaCalendarAlt } from "react-icons/fa";
-import Navbar from "@/components/Navbar";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import { EventGallery } from "@/types/Gallery";
 import Image from "next/image";
@@ -29,7 +28,6 @@ const Gallery = () => {
 
   return (
     <BackgroundLayout>
-      <Navbar />
       <div className="container overflow-x-hidden mx-auto px-4 py-10 md:py-20 text-white">
         <h1 className="text-5xl font-bold mt-10 mb-10 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Event Gallery

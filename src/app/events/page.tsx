@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import Navbar from "@/components/Navbar";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import { Event } from "@/types/Event";
 import Image from "next/image";
@@ -47,7 +46,6 @@ const Events = () => {
 
   return (
     <BackgroundLayout>
-      <Navbar />
       <div className="container overflow-x-hidden mx-auto px-4 mt-10 py-10 md:py-20 text-white">
         <h1 className="text-5xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
           Explore Our Events

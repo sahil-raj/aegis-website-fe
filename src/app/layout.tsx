@@ -1,9 +1,11 @@
 import "./globals.css";
+import GetInTouchFooter from "@/components/GetInTouch";
+import Navbar from "@/components/Navbar";
+
 export const metadata = {
   title: "Aegis",
   description: "Aegis Invictus",
 };
-import GetInTouchFooter from "@/components/GetInTouch";
 
 export default function RootLayout({
   children,
@@ -20,6 +22,7 @@ export default function RootLayout({
         />
       </head>
       <body className="overflow-x-hidden">
+        <Navbar />
         {children}
         <GetInTouchFooter />
       </body>

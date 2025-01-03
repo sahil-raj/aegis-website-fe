@@ -2,8 +2,6 @@ import React from "react";
 import { Shield, Target, Code, Brain, Network } from "lucide-react";
 import BackgroundLayout from "@/components/BackgroundLayout";
 
-import Navbar from "@/components/Navbar";
-
 const About = () => {
   const activities = [
     {
@@ -34,7 +32,6 @@ const About = () => {
 
   return (
     <BackgroundLayout>
-      <Navbar />
       <div className="container mt-10 mx-auto px-4 py-20 text-white overflow-x-hidden">
         {/* Hero Section */}
         <div className="text-center mb-16">
