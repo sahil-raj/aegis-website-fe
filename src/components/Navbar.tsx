@@ -50,7 +50,7 @@ const Navbar = () => {
             <Link href="/" className="flex-shrink-0 relative">
               <div className="lg:hidden">
                 <Image
-                  src="/Aegis_Logo.png"
+                  src="/aegis_trans.png"
                   alt="Club Logo"
                   width={120}
                   height={120}
@@ -60,7 +60,7 @@ const Navbar = () => {
               </div>
               <div className="hidden lg:block">
                 <Image
-                  src="/Aegis_Logo.png"
+                  src="/aegis_trans.png"
                   alt="Club Logo"
                   width={180}
                   height={180}
