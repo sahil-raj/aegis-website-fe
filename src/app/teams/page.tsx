@@ -84,7 +84,8 @@ const Teams = () => {
           />
         </div>
         <h3 className="text-xl font-bold mb-2">{`${member.first_name} ${member.last_name}`}</h3>
-        <p className="text-gray-400">{member.description}</p>
+        <p className="text-sm text-gray-300">{member.role}</p>
+        <p className="text-gray-400 mt-4">{member.description}</p>
         <div className="flex justify-center gap-4 mt-4">
           {member.email && (
             <Link
@@ -111,7 +112,6 @@ const Teams = () => {
             </Link>
           )}
         </div>
-        <p className="text-sm text-gray-300 mt-4">{member.role}</p>
       </div>
     ));
   };
