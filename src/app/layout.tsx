@@ -1,4 +1,5 @@
 import "./globals.css";
+import BackgroundLayout from "@/components/BackgroundLayout";
 import GetInTouchFooter from "@/components/GetInTouch";
 import Navbar from "@/components/Navbar";
 
@@ -22,9 +23,11 @@ export default function RootLayout({
         />
       </head>
       <body className="overflow-x-hidden">
-        <Navbar />
-        {children}
-        <GetInTouchFooter />
+        <BackgroundLayout>
+          <Navbar />
+          {children}
+          <GetInTouchFooter />
+        </BackgroundLayout>
       </body>
       <script async src="https://cdn.splitbee.io/sb.js"></script>
     </html>

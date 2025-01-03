@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { TeamMember } from "@/types/TeamMember";
-import BackgroundLayout from "@/components/BackgroundLayout";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -119,48 +118,38 @@ const Teams = () => {
 
   if (loading) {
     return (
-      <BackgroundLayout>
-        <div className="container mx-auto px-4 py-20 text-white text-center">
-          <h2 className="text-3xl">Loading team members...</h2>
-        </div>
-      </BackgroundLayout>
+      <div className="container mx-auto px-4 py-20 text-white text-center">
+        <h2 className="text-3xl">Loading team members...</h2>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <BackgroundLayout>
-        <div className="container mx-auto px-4 py-20 text-white text-center">
-          <h2 className="text-3xl">{error}</h2>
-        </div>
-      </BackgroundLayout>
+      <div className="container mx-auto px-4 py-20 text-white text-center">
+        <h2 className="text-3xl">{error}</h2>
+      </div>
     );
   }
 
   return (
-    <BackgroundLayout>
-      <div className="container overflow-x-hidden mx-auto px-4 py-20 text-white">
-        <h1 className="text-5xl pb-4 mt-10 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
-          Meet Our Aegis Team
-        </h1>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Club")}</div>
-        {/* Other teams */}
-        <h2 className="text-3xl font-bold mb-8 mt-16">Technical Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {renderTeam("Technical")}
-        </div>
-        <h2 className="text-3xl font-bold mb-8 mt-16">Media Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">{renderTeam("Media")}</div>
-        <h2 className="text-3xl font-bold mb-8 mt-16">Cultural Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {renderTeam("Cultural")}
-        </div>
-        <h2 className="text-3xl font-bold mb-8 mt-16">Operations Team</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {renderTeam("Operations")}
-        </div>
+    <div className="container overflow-x-hidden mx-auto px-4 py-20 text-white">
+      <h1 className="text-5xl pb-4 mt-10 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
+        Meet Our Aegis Team
+      </h1>
+      <div className="grid md:grid-cols-3 gap-8">{renderTeam("Club")}</div>
+      {/* Other teams */}
+      <h2 className="text-3xl font-bold mb-8 mt-16">Technical Team</h2>
+      <div className="grid md:grid-cols-3 gap-8">{renderTeam("Technical")}</div>
+      <h2 className="text-3xl font-bold mb-8 mt-16">Media Team</h2>
+      <div className="grid md:grid-cols-3 gap-8">{renderTeam("Media")}</div>
+      <h2 className="text-3xl font-bold mb-8 mt-16">Cultural Team</h2>
+      <div className="grid md:grid-cols-3 gap-8">{renderTeam("Cultural")}</div>
+      <h2 className="text-3xl font-bold mb-8 mt-16">Operations Team</h2>
+      <div className="grid md:grid-cols-3 gap-8">
+        {renderTeam("Operations")}
       </div>
-    </BackgroundLayout>
+    </div>
   );
 };
 
