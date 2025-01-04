@@ -19,7 +19,10 @@ const Teams = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data, error } = await supabase.from("team_members").select("*");
+        const { data, error } = await supabase
+          .from("team_members")
+          .select("*")
+          .eq("present_member", true);
         if (error) throw new Error(error.message);
         setTeamMembers(data || []);
       } catch (err) {
