@@ -37,7 +37,7 @@ const Teams = () => {
   }, []);
 
   const getRole = (member: TeamMember): string => {
-    const role = member.role?.trim().toLowerCase() || "member"; // Normalize to lowercase
+    const role = member.role?.trim().toLowerCase() || "member";
     switch (role) {
       case "lead":
         return "Lead";
@@ -85,6 +85,17 @@ const Teams = () => {
             layout="fill"
             className="rounded-full object-cover border-4 border-blue-400"
           />
+          {/* Pet name overlay */}
+          {member.pet_name &&
+            !isPetNameSimilar(
+              member.pet_name,
+              member.first_name,
+              member.last_name
+            ) && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-sm font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-full">
+                (aka: {member.pet_name})
+              </div>
+            )}
         </div>
         <h3 className="text-xl font-bold mb-2">{`${member.first_name} ${member.last_name}`}</h3>
         <p className="text-sm text-gray-300">{member.role}</p>
@@ -115,8 +126,42 @@ const Teams = () => {
             </Link>
           )}
         </div>
+        {/* Render tags as badges */}
+        {member.tags && member.tags.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-3 mt-4">
+            {member.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 backdrop-blur-md ring-1 ring-white/10 text-white hover:bg-white/30 transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     ));
+  };
+
+  const isPetNameSimilar = (
+    petName: string | null,
+    firstName: string,
+    lastName: string
+  ): boolean => {
+    if (!petName) return false;
+
+    const normalizedPetName = petName.trim().toLowerCase();
+    const normalizedFirstName = firstName.trim().toLowerCase();
+    const normalizedLastName = lastName.trim().toLowerCase();
+    const normalizedFullName =
+      `${firstName.trim()} ${lastName.trim()}`.toLowerCase();
+
+    // Check if pet_name matches first_name, last_name, or full name
+    return (
+      normalizedPetName === normalizedFirstName ||
+      normalizedPetName === normalizedLastName ||
+      normalizedPetName === normalizedFullName
+    );
   };
 
   if (loading) {
