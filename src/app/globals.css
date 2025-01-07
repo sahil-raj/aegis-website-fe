@@ -104,23 +104,22 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7c7c7c;
+  background: rgba(124, 124, 124, 0.4);
   /* If in future we decide to go with a gradient :) */
   /* background: linear-gradient(to bottom, white, black); */
   border-radius: 10px;
-  border: 2px solid #7c7c7c;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(124, 124, 124, 0.6);
 }
 
 /* For 'non webkit' browsers like Firefox */
-.scrollable-element {
+/* .scrollable-element {
   scrollbar-width: thin;
   scrollbar-color: #7c7c7c black;
 }
 
 .scrollable-element:hover {
   scrollbar-color: #555 black;
-}
+} */
