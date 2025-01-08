@@ -6,6 +6,12 @@ import { Terminal, Timer, Users, X } from 'lucide-react';
 export function HackathonBanner() {
   const [isVisible, setIsVisible] = useState(true);
 
+  // Handle the visibility of the banner
+  const handleCloseBanner = () => {
+    setIsVisible(false);
+  };
+
+  // Return null if the banner is not visible
   if (!isVisible) return null;
 
   return (
@@ -20,7 +26,7 @@ export function HackathonBanner() {
         >
           {/* Close Button */}
           <button
-            onClick={() => setIsVisible(false)}
+            onClick={handleCloseBanner}
             className="absolute -top-4 -right-4 bg-red-500 p-2 rounded-full border-4 border-black 
               hover:bg-red-600 transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
           >
