@@ -11,7 +11,7 @@ const HomePage = () => {
 
         {/* Radial Gradient - Preserved desktop size, only adjust for very small screens */}
         <div className="absolute top-1/2 left-1/2 h-[750px] w-[750px] -translate-x-1/2 -translate-y-1/2">
-          <div className="w-full h-full rounded-full bg-[radial-gradient(circle_400px_at_center,#46a5aa4a,#000)]" />
+          <div className="w-full h-full rounded-full bg-[radial-gradient(circle_400px_at_center,rgba(70, 165, 170, 0.29),#000)]" />
         </div>
       </div>
 
