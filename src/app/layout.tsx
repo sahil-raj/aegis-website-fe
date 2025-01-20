@@ -2,7 +2,9 @@ import "./globals.css";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import GetInTouchFooter from "@/components/GetInTouch";
 import Navbar from "@/components/Navbar";
-import {HackathonBanner} from "@/components/Banner";
+import { HackathonBanner } from "@/components/Banner";
+
+import { CSPostHogProvider } from "./providers/posthogProvider";
 
 export const metadata = {
   title: "Aegis",
@@ -23,14 +25,16 @@ export default function RootLayout({
           type="image/x-icon"
         />
       </head>
-      <body className="overflow-x-hidden">
-        <BackgroundLayout>
-          <Navbar />
-          {children}
-          <HackathonBanner />
-          <GetInTouchFooter />
-        </BackgroundLayout>
-      </body>
+      <CSPostHogProvider>
+        <body className="overflow-x-hidden">
+          <BackgroundLayout>
+            <Navbar />
+            {children}
+            <HackathonBanner />
+            <GetInTouchFooter />
+          </BackgroundLayout>
+        </body>
+      </CSPostHogProvider>
       <script async src="https://cdn.splitbee.io/sb.js"></script>
     </html>
   );
