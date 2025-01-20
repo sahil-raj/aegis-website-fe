@@ -48,11 +48,15 @@ const Events = () => {
       <h1 className="text-5xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
         Explore Our Events
       </h1>
-      {/* Past Events Section */}
-      {pastEvents.length > 0 && (
+
+      {/* Upcoming Events Section */}
+      {upcomingEvents.length > 0 && (
         <>
+          <h2 className="text-3xl font-bold mb-8 mt-16 text-center md:text-left">
+            Upcoming Events
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {pastEvents.map((event, index) => (
+            {upcomingEvents.map((event, index) => (
               <div
                 key={index}
                 className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-gray-700"
@@ -73,14 +77,14 @@ const Events = () => {
         </>
       )}
 
-      {/* Upcoming Events Section */}
-      {upcomingEvents.length > 0 && (
+      {/* Past Events Section */}
+      {pastEvents.length > 0 && (
         <>
           <h2 className="text-3xl font-bold mb-8 mt-16 text-center md:text-left">
-            Upcoming Events
+            Past Events
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {upcomingEvents.map((event, index) => (
+            {pastEvents.map((event, index) => (
               <div
                 key={index}
                 className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-gray-700"
