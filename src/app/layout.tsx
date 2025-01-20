@@ -2,6 +2,7 @@ import "./globals.css";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import GetInTouchFooter from "@/components/GetInTouch";
 import Navbar from "@/components/Navbar";
+import {HackathonBanner} from "@/components/Banner";
 
 export const metadata = {
   title: "Aegis",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <BackgroundLayout>
           <Navbar />
           {children}
+          <HackathonBanner />
           <GetInTouchFooter />
         </BackgroundLayout>
       </body>
