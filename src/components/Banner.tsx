@@ -21,7 +21,7 @@ export function HackathonBanner() {
             </div>
             <div className="text-center md:text-left">
               <h2 className="text-lg font-semibold text-white">
-                AEGIS Hackathon 2024
+                SANDBOX Hackathon 2024
               </h2>
               <p className="text-sm text-gray-400">
                 Join us for 24 hours of hacking, learning, and innovation
