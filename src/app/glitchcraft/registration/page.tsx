@@ -70,11 +70,11 @@ function SandboxRegistration() {
       {/* Header */}
       <div className="bg-black border-b border-white/20 p-8">
         <h1 className="text-6xl font-bold text-center mb-4 neon-text tracking-wider">
-          Register for SANDBOX
+          Register for GlitchCraft
         </h1>
         <p className="text-center text-white max-w-3xl mx-auto text-lg">
           Register for the events of your choice and showcase your talent at
-          SANDBOX 2025
+          GlitchCraft 2025
         </p>
       </div>
 
