@@ -5,6 +5,7 @@ import { Film, Gamepad2, KeyRound, Music, Video, Shield } from "lucide-react";
 
 function SandboxRegistration() {
   const [activeTab, setActiveTab] = useState("ctf");
+  const [entryType, setEntryType] = useState("solo");
 
   const GeneralDetails = () => (
     <div className="space-y-4 border-b border-white/30 pb-6 mb-6">
@@ -92,7 +93,7 @@ function SandboxRegistration() {
         <button
           onClick={() => setActiveTab("reel")}
           className={`neon-button flex items-center space-x-2 ${
-            activeTab === "reel" ? "bg-white/95" : ""
+            activeTab === "reel" ? "bg-white/20" : ""
           }`}
         >
           <Video size={20} />
@@ -244,7 +245,7 @@ function SandboxRegistration() {
                   required
                 />
               </div>
-              <div>
+              {/* <div>
                 <label className="block text-white mb-2">
                   Number of Team Members
                 </label>
@@ -254,7 +255,7 @@ function SandboxRegistration() {
                   className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                   required
                 />
-              </div>
+              </div> */}
             </div>
             <button type="submit" className="w-full neon-button py-3">
               Register for CTF
@@ -294,30 +295,151 @@ function SandboxRegistration() {
             <GeneralDetails />
             <div className="space-y-4">
               <div>
-                <label className="block text-white mb-2">
-                  In-game Name (IGN)
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-white mb-2">BGMI Player ID</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
-                  required
-                />
-              </div>
-              <div>
                 <label className="block text-white mb-2">Entry Type</label>
-                <select className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white">
-                  <option value="squad">Squad</option>
+                <select
+                  className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                  value={entryType}
+                  onChange={(e) => setEntryType(e.target.value)}
+                >
                   <option value="solo">Solo</option>
+                  <option value="squad">Squad</option>
                 </select>
               </div>
+              {entryType === "solo" && (
+                <>
+                  <div>
+                    <label className="block text-white mb-2">
+                      Player IGN(In Game Name)
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white mb-2">
+                      BGMI Player ID
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                      required
+                    />
+                  </div>
+                </>
+              )}
+
+              {entryType === "squad" && (
+                <>
+                  <div>
+                    <label className="block text-white mb-2">Team Name</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-4">
+                    {/* Team Leader */}
+                    <div className="flex flex-col md:flex-row md:space-x-4">
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          Team Leader IGN (In Game Name)
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          BGMI Player ID
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Member 2 */}
+                    <div className="flex flex-col md:flex-row md:space-x-4">
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          Member 2 IGN
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          BGMI Player ID
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Member 3 */}
+                    <div className="flex flex-col md:flex-row md:space-x-4">
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          Member 3 IGN
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          BGMI Player ID
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Member 4 */}
+                    <div className="flex flex-col md:flex-row md:space-x-4">
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          Member 4 IGN
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                      <div className="w-full md:w-1/2">
+                        <label className="block text-white mb-2">
+                          BGMI Player ID
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+
               <div className="flex items-center space-x-3">
                 <input
                   type="checkbox"
@@ -331,7 +453,7 @@ function SandboxRegistration() {
               </div>
             </div>
             <button type="submit" className="w-full neon-button py-3">
-              Register for Battle
+              Register to Battle
             </button>
           </form>
         )}
