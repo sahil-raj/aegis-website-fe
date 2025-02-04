@@ -22,7 +22,7 @@ const Events = () => {
     };
     console.log(events, supabase);
     fetchData();
-  }, []);
+  }, [events]);
 
   useEffect(() => {
     if (events.length > 0) {

@@ -6,7 +6,10 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_KEY_GLITCH!;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const useGlitchSubmit = () => {
-  const submitForm = async (table: string, formData: Record<string, any>) => {
+  const submitForm = async (
+    table: string,
+    formData: Record<string, string | number | boolean | File | null>
+  ) => {
     try {
       const { data, error } = await supabase.from(table).insert([formData]);
 
