@@ -11,8 +11,9 @@ import Escape from "./forms/Escape";
 
 function SandboxRegistration() {
   const [activeTab, setActiveTab] = useState("ctf");
+
   return (
-    <div className="container overflow-x-hidden mx-auto  py-10 md:py-20 text-white">
+    <div className="container overflow-x-hidden mx-auto py-10 md:py-20 text-white">
       {/* Header */}
       <div className="bg-black border-b border-white/20 p-8">
         <h1 className="text-6xl font-bold text-center mb-4 neon-text tracking-wider">
@@ -26,80 +27,37 @@ function SandboxRegistration() {
 
       {/* Tab Navigation */}
       <div className="flex justify-center mt-8 space-x-4 px-4 flex-wrap gap-y-2">
-        <button
-          onClick={() => setActiveTab("music")}
-          className={`neon-button flex items-center space-x-2 ${
-            activeTab === "music" ? "bg-white/20" : ""
-          }`}
-        >
-          <Music size={20} />
-          <span>HACK-A-NOTE</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("reel")}
-          className={`neon-button flex items-center space-x-2 ${
-            activeTab === "reel" ? "bg-white/20" : ""
-          }`}
-        >
-          <Video size={20} />
-          <span>REELITY SHOW</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("ctf")}
-          className={`neon-button flex items-center space-x-2 ${
-            activeTab === "ctf" ? "bg-white/20" : ""
-          }`}
-        >
-          <Shield size={20} />
-          <span>DECIPHER BLITZ</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("movie")}
-          className={`neon-button flex items-center space-x-2 ${
-            activeTab === "movie" ? "bg-white/20" : ""
-          }`}
-        >
-          <Film size={20} />
-          <span>Movie Quiz</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("bgmi")}
-          className={`neon-button flex items-center space-x-2 ${
-            activeTab === "bgmi" ? "bg-white/20" : ""
-          }`}
-        >
-          <Gamepad2 size={20} />
-          <span>BGMI Battle</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("escape")}
-          className={`neon-button flex items-center space-x-2 ${
-            activeTab === "escape" ? "bg-white/20" : ""
-          }`}
-        >
-          <KeyRound size={20} />
-          <span>Escape Room</span>
-        </button>
+        {[
+          { id: "music", label: "HACK-A-NOTE", icon: <Music size={20} /> },
+          { id: "reel", label: "REELITY SHOW", icon: <Video size={20} /> },
+          { id: "ctf", label: "DECIPHER BLITZ", icon: <Shield size={20} /> },
+          { id: "movie", label: "Movie Quiz", icon: <Film size={20} /> },
+          { id: "bgmi", label: "BGMI Battle", icon: <Gamepad2 size={20} /> },
+          { id: "escape", label: "Escape Room", icon: <KeyRound size={20} /> },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`neon-button flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300
+              ${
+                activeTab === tab.id
+                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/50"
+                  : "bg-white/10 hover:bg-white/20"
+              }`}
+          >
+            {tab.icon}
+            <span>{tab.label}</span>
+          </button>
+        ))}
       </div>
 
       {/* Forms Container */}
       <div className="max-w-3xl mx-auto mt-8 p-6">
-        {/* HACK-A-NOTE Form */}
         {activeTab === "music" && <HackANote />}
-
-        {/* REELITY SHOW Form */}
         {activeTab === "reel" && <Reelity />}
-
-        {/* DECIPHER BLITZ Form */}
         {activeTab === "ctf" && <Decipher />}
-
-        {/* Movie Quiz Form */}
         {activeTab === "movie" && <Movie />}
-
-        {/* BGMI Form */}
         {activeTab === "bgmi" && <Bgmi />}
-
-        {/* Escape Room Form */}
         {activeTab === "escape" && <Escape />}
       </div>
     </div>
