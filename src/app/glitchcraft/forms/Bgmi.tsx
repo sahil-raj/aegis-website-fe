@@ -1,10 +1,29 @@
-import GeneralDetails from "../components/GeneralDetails";
 import { useState } from "react";
+import GeneralDetails from "../components/GeneralDetails";
+import useGlitchSubmit from "@/hooks/useGlitchcraftSubmit";
 
 const Bgmi = () => {
   const [entryType, setEntryType] = useState("solo");
+
+  const { submitForm } = useGlitchSubmit();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = Object.fromEntries(new FormData(e.currentTarget));
+
+    const response = await submitForm("BGMI_BATTLE", formData);
+    alert(response.message);
+
+    setLoading(false);
+  };
   return (
-    <form className="space-y-6 bg-black/80 p-8 rounded-xl border border-white/20 cyber-grid">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 bg-black/80 p-8 rounded-xl border border-white/20 cyber-grid"
+    >
       <h2 className="text-3xl font-bold text-center mb-8 neon-text">
         BGMI BATTLE BLITZ
       </h2>
@@ -13,6 +32,7 @@ const Bgmi = () => {
         <div>
           <label className="block text-white mb-2">Entry Type</label>
           <select
+            name="Entry_Type"
             className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
             value={entryType}
             onChange={(e) => setEntryType(e.target.value)}
@@ -28,6 +48,7 @@ const Bgmi = () => {
                 Player IGN(In Game Name)
               </label>
               <input
+                name="Player_IGN"
                 type="text"
                 className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                 required
@@ -36,6 +57,7 @@ const Bgmi = () => {
             <div>
               <label className="block text-white mb-2">BGMI Player ID</label>
               <input
+                name="BGMI_Player_ID"
                 type="text"
                 className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                 required
@@ -49,6 +71,7 @@ const Bgmi = () => {
             <div>
               <label className="block text-white mb-2">Team Name</label>
               <input
+                name="Team_Name"
                 type="text"
                 className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                 required
@@ -62,6 +85,7 @@ const Bgmi = () => {
                     Team Leader IGN (In Game Name)
                   </label>
                   <input
+                    name="Team_Leader_IGN"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -72,6 +96,7 @@ const Bgmi = () => {
                     BGMI Player ID
                   </label>
                   <input
+                    name="BGMI_Player_ID"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -84,6 +109,7 @@ const Bgmi = () => {
                 <div className="w-full md:w-1/2">
                   <label className="block text-white mb-2">Member 2 IGN</label>
                   <input
+                    name="IGN_2"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -94,6 +120,7 @@ const Bgmi = () => {
                     BGMI Player ID
                   </label>
                   <input
+                    name="BGMI_ID_2"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -106,6 +133,7 @@ const Bgmi = () => {
                 <div className="w-full md:w-1/2">
                   <label className="block text-white mb-2">Member 3 IGN</label>
                   <input
+                    name="IGN_3"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -116,6 +144,7 @@ const Bgmi = () => {
                     BGMI Player ID
                   </label>
                   <input
+                    name="BGMI_ID_3"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -128,6 +157,7 @@ const Bgmi = () => {
                 <div className="w-full md:w-1/2">
                   <label className="block text-white mb-2">Member 4 IGN</label>
                   <input
+                    name="IGN_4"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -138,6 +168,7 @@ const Bgmi = () => {
                     BGMI Player ID
                   </label>
                   <input
+                    name="BGMI_ID_4"
                     type="text"
                     className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
                     required
@@ -161,7 +192,7 @@ const Bgmi = () => {
         </div>
       </div>
       <button type="submit" className="w-full neon-button py-3">
-        Register to Battle
+        {loading ? "Submitting..." : "Register"}
       </button>
     </form>
   );

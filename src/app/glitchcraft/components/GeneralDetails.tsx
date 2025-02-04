@@ -5,6 +5,7 @@ const GeneralDetails = () => (
       <div>
         <label className="block text-white mb-2">Full Name</label>
         <input
+          name="Full_Name"
           type="text"
           className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white placeholder-white/50"
           required
@@ -13,6 +14,7 @@ const GeneralDetails = () => (
       <div>
         <label className="block text-white mb-2">Email ID</label>
         <input
+          name="Email_ID"
           type="email"
           className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white placeholder-white/50"
           required
@@ -22,6 +24,7 @@ const GeneralDetails = () => (
         <label className="block text-white mb-2">Phone Number (WhatsApp)</label>
         <input
           type="tel"
+          name="Phone_Number"
           className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white placeholder-white/50"
           required
         />
@@ -29,6 +32,7 @@ const GeneralDetails = () => (
       <div>
         <label className="block text-white mb-2">Department</label>
         <input
+          name="Department"
           type="text"
           className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white placeholder-white/50"
           required
@@ -37,6 +41,7 @@ const GeneralDetails = () => (
       <div>
         <label className="block text-white mb-2">USN</label>
         <input
+          name="USN"
           type="text"
           className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white placeholder-white/50"
           required
@@ -44,7 +49,10 @@ const GeneralDetails = () => (
       </div>
       <div>
         <label className="block text-white mb-2">Year of Study</label>
-        <select className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white">
+        <select
+          name="Year_of_Study"
+          className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+        >
           <option value="1">1st Year</option>
           <option value="2">2nd Year</option>
           <option value="3">3rd Year</option>
