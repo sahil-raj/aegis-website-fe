@@ -13,7 +13,11 @@ const HackANote = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget));
 
     const response = await submitForm("HACK_A_NOTE", formData);
-    alert(response.message);
+    alert(
+      response.message +
+        "\n you'll be redirected to join the official whatsapp group"
+    );
+    window.open("https://chat.whatsapp.com/HqE7KOSZxNFImjEHvoglao");
 
     setLoading(false);
   };

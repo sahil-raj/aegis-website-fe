@@ -13,7 +13,12 @@ const Movie = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget));
 
     const response = await submitForm("MOVIE_QUIZ", formData);
-    alert(response.message);
+    alert(
+      response.message +
+        "\n you'll be redirected to join the official whatsapp group"
+    );
+
+    window.open("https://chat.whatsapp.com/FJXPCfiYOA646NvCgClCYs");
 
     setLoading(false);
   };

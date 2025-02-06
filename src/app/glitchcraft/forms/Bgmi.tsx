@@ -15,7 +15,12 @@ const Bgmi = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget));
 
     const response = await submitForm("BGMI_BATTLE", formData);
-    alert(response.message);
+    alert(
+      response.message +
+        "\n you'll be redirected to join the official whatsapp group"
+    );
+
+    window.open("https://chat.whatsapp.com/F4T7WdnITBx85Wm3WmQ1Z7");
 
     setLoading(false);
   };
