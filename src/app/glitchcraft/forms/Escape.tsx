@@ -17,9 +17,7 @@ const Escape = () => {
       response.message +
         "\n you'll be redirected to join the official whatsapp group"
     );
-    window.open(
-      "Follow this link to join my WhatsApp group: https://chat.whatsapp.com/JGOVkNqhuOn0nCc1bGGglw"
-    );
+    window.open("https://chat.whatsapp.com/JGOVkNqhuOn0nCc1bGGglw");
 
     setLoading(false);
   };
