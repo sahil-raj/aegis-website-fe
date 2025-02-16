@@ -51,6 +51,12 @@ const Teams = () => {
       case "club colead":
       case "club co lead":
         return "Club Co-Lead";
+      case "faculty chair":
+        return "Faculty Chair"
+      case "faculty convenor":
+        return "Faculty Convenor"
+      case "faculty member":
+        return "Faculty Member"
       default:
         return "Member";
     }
@@ -63,6 +69,9 @@ const Teams = () => {
       Lead: 3,
       "Co-Lead": 4,
       Member: 5,
+      "Faculty Chair": 1,
+      "Faculty Convenor": 2,
+      "Faculty Member": 3,
     };
 
     const sortedTeamMembers = teamMembers
@@ -185,8 +194,10 @@ const Teams = () => {
       <h1 className="text-5xl pb-4 mt-10 font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 text-center">
         Meet Our Aegis Team
       </h1>
+      <h2 className="text-3xl font-bold mb-8 mt-16">Faculty</h2>
+      <div className="grid md:grid-cols-3 gap-8">{renderTeam("Faculty")}</div>
+      <h2 className="text-3xl font-bold mb-8 mt-16">Club Leaders</h2>
       <div className="grid md:grid-cols-3 gap-8">{renderTeam("Club")}</div>
-      {/* Other teams */}
       <h2 className="text-3xl font-bold mb-8 mt-16">Technical Team</h2>
       <div className="grid md:grid-cols-3 gap-8">{renderTeam("Technical")}</div>
       <h2 className="text-3xl font-bold mb-8 mt-16">Media Team</h2>
