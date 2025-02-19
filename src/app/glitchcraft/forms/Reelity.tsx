@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import GeneralDetails from "../components/GeneralDetails";
 import useGlitchSubmit from "@/hooks/useGlitchcraftSubmit";
+import { toast } from "react-hot-toast";
 
 const Reelity = () => {
   const { submitForm } = useGlitchSubmit();
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,18 +15,26 @@ const Reelity = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget));
 
     const response = await submitForm("REELITY_SHOW", formData);
-    alert(
-      response.message +
-        "\n you'll be redirected to join the official whatsapp group"
-    );
 
-    window.open("https://chat.whatsapp.com/IwftapmEgv5BlUv3x7gDDx");
+    if (response.success) {
+      formRef.current?.reset();
+      toast.success(
+        response.message +
+          "\n You'll be redirected to join the official whatsapp group"
+      );
+      setTimeout(() => {
+        window.open("https://chat.whatsapp.com/IwftapmEgv5BlUv3x7gDDx");
+      }, 2000);
+    } else {
+      toast.error("Error submitting form: " + "Potential duplicate entry");
+    }
 
     setLoading(false);
   };
   return (
     <form
       onSubmit={handleSubmit}
+      ref={formRef}
       className="space-y-6 bg-black/80 p-8 rounded-xl border border-white/20 cyber-grid"
     >
       <h2 className="text-3xl font-bold text-center mb-8 neon-text">

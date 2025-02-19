@@ -1,50 +1,95 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import GeneralDetails from "../components/GeneralDetails";
 import useGlitchSubmit from "@/hooks/useGlitchcraftSubmit";
+import supabaseGlitchcraft from "@/lib/supabaseGlitchcraft";
+import { toast } from "react-hot-toast";
 
 const Escape = () => {
   const { submitForm } = useGlitchSubmit();
   const [loading, setLoading] = useState(false);
+  const [registeredTeamsCount, setRegisteredTeamsCount] = useState(0); // Track registered teams count
+  const MAX_TEAMS = 15;
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const fetchRegisteredTeamsCount = async () => {
+      const { data, error } = await supabaseGlitchcraft.rpc(
+        "count_unique_teams"
+      );
+
+      if (error) {
+        console.error("Error fetching team count:", error);
+        return;
+      }
+
+      setRegisteredTeamsCount(data || 0);
+    };
+
+    fetchRegisteredTeamsCount();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
     const formData = Object.fromEntries(new FormData(e.currentTarget));
-
     const response = await submitForm("ESCAPE_ROOM", formData);
-    alert(
-      response.message +
-        "\n you'll be redirected to join the official whatsapp group"
-    );
-    window.open("https://chat.whatsapp.com/JGOVkNqhuOn0nCc1bGGglw");
-
+    if (response.success) {
+      formRef.current?.reset();
+      toast.success(
+        response.message +
+          "\n You'll be redirected to join the official whatsapp group"
+      );
+      setTimeout(() => {
+        window.open("https://chat.whatsapp.com/JGOVkNqhuOn0nCc1bGGglw");
+      }, 2000);
+    } else {
+      toast.error("Error submitting form: " + "Potential duplicate entry");
+    }
     setLoading(false);
   };
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-6 bg-black/80 p-8 rounded-xl border border-white/20 cyber-grid"
-    >
-      <h2 className="text-3xl font-bold text-center mb-8 neon-text">
+    <div className="space-y-6 bg-black/80 p-8 rounded-xl border border-white/20 cyber-grid">
+      <h2 className="text-3xl font-bold text-center mb-4 neon-text">
         ESCAPE THE ENIGMA
       </h2>
-      <GeneralDetails />
-      <div className="space-y-4">
-        <div>
-          <label className="block text-white mb-2">Team Name</label>
-          <input
-            name="Team_Name"
-            type="text"
-            className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
-            required
-          />
-        </div>
+      {/* Display registration status */}
+      <div className="text-center mb-2 text-white">
+        {registeredTeamsCount >= MAX_TEAMS ? (
+          <p className="text-red-500 font-bold">
+            Registration Closed: Maximum teams registered.
+          </p>
+        ) : (
+          <p className="text-lg neon-text font-bold">
+            Teams Registered: {registeredTeamsCount}/{MAX_TEAMS}
+          </p>
+        )}
       </div>
-      <button type="submit" className="w-full neon-button py-3">
-        {loading ? "Submitting..." : "Register"}
-      </button>
-    </form>
+      <form
+        onSubmit={handleSubmit}
+        ref={formRef}
+        className={`space-y-6 ${
+          registeredTeamsCount >= MAX_TEAMS
+            ? "opacity-50 pointer-events-none"
+            : ""
+        }`}
+      >
+        <GeneralDetails />
+        <div className="space-y-4">
+          <div>
+            <label className="block text-white mb-2">Team Name</label>
+            <input
+              name="Team_Name"
+              type="text"
+              className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/30 focus:border-white focus:ring-1 focus:ring-white text-white"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" className="w-full neon-button py-3">
+          {loading ? "Submitting..." : "Register"}
+        </button>
+      </form>
+    </div>
   );
 };
 
