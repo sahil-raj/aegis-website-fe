@@ -22,7 +22,8 @@ export function HackathonBanner() {
             <div className="text-center md:text-left">
               <h2 className="text-lg font-bold text-white">SANDBOX 2025</h2>
               <p className="text-md font-sans text-gray-200">
-                <strong>Bangalore's Biggest</strong> Cyber Security Hackathon
+                <strong>Bangalore&apos;s Biggest</strong> Cyber Security
+                Hackathon
               </p>
               <p className="text-sm text-gray-400">
                 Join us for 24 hours of hacking, learning, and innovation
