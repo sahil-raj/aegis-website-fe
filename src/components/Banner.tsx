@@ -42,7 +42,7 @@ export function HackathonBanner() {
               </span>
               <span className="flex items-center gap-1">
                 <Users className="h-4 w-4 text-cyan-400" />
-                150+ Hackers
+                200+
               </span>
               <div className="flex items-center gap-1.5">
                 <Trophy className="h-4 w-4 text-cyan-400" />
