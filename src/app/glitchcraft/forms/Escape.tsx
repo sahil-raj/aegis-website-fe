@@ -36,8 +36,7 @@ const Escape = () => {
     if (response.success) {
       formRef.current?.reset();
       toast.success(
-        response.message +
-          "Registration Success and you are Shortlisted! \n You will be notified when you are selected! "
+        "Registration Success and you are Shortlisted! \n You will be notified when you are selected! "
       );
       // setTimeout(() => {
       //   window.open("https://chat.whatsapp.com/xxxx");
