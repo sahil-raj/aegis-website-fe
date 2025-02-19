@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/events", label: "Events" },
   { href: "/achievements", label: "Achievements" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/glitchcraft", label: "Glitchcraft" },
   // { href: "/blogs", label: "Blogs" }, // Added Blogs
 ];
 

@@ -31,7 +31,7 @@ function SandboxRegistration() {
           { id: "music", label: "HACK-A-NOTE", icon: <Music size={20} /> },
           { id: "reel", label: "REELITY SHOW", icon: <Video size={20} /> },
           { id: "ctf", label: "DECIPHER BLITZ", icon: <Shield size={20} /> },
-          { id: "movie", label: "Movie Quiz", icon: <Film size={20} /> },
+          { id: "movie", label: "Cine Mania", icon: <Film size={20} /> },
           { id: "bgmi", label: "BGMI Battle", icon: <Gamepad2 size={20} /> },
           { id: "escape", label: "Escape Room", icon: <KeyRound size={20} /> },
         ].map((tab) => (
