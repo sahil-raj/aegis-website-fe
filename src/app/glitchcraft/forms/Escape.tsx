@@ -8,8 +8,8 @@ const Escape = () => {
   const { submitForm } = useGlitchSubmit();
   const [loading, setLoading] = useState(false);
   const [registeredTeamsCount, setRegisteredTeamsCount] = useState(0); // Track registered teams count
-  const MAX_TEAMS = 15;
   const formRef = useRef<HTMLFormElement>(null);
+  const MAX_TEAMS = 20;
 
   useEffect(() => {
     const fetchRegisteredTeamsCount = async () => {
@@ -37,11 +37,11 @@ const Escape = () => {
       formRef.current?.reset();
       toast.success(
         response.message +
-          "\n You'll be redirected to join the official whatsapp group"
+          "Registration Success and you are Shortlisted! \n You will be notified when you are selected! "
       );
-      setTimeout(() => {
-        window.open("https://chat.whatsapp.com/JGOVkNqhuOn0nCc1bGGglw");
-      }, 2000);
+      // setTimeout(() => {
+      //   window.open("https://chat.whatsapp.com/xxxx");
+      // }, 2000);
     } else {
       toast.error("Error submitting form: " + "Potential duplicate entry");
     }
@@ -54,13 +54,9 @@ const Escape = () => {
       </h2>
       {/* Display registration status */}
       <div className="text-center mb-2 text-white">
-        {registeredTeamsCount >= MAX_TEAMS ? (
+        {registeredTeamsCount >= MAX_TEAMS && (
           <p className="text-red-500 font-bold">
             Registration Closed: Maximum teams registered.
-          </p>
-        ) : (
-          <p className="text-lg neon-text font-bold">
-            Teams Registered: {registeredTeamsCount}/{MAX_TEAMS}
           </p>
         )}
       </div>

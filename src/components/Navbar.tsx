@@ -47,7 +47,7 @@ const Navbar = () => {
     <div className="right-0 z-50 fixed top-0 left-0 w-full bg-black bg-opacity-10 backdrop-blur-md">
       <nav className="mx-1 my-1">
         <div className="bg-black/0 rounded-2xl text-white backdrop-blur-sm">
-          <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="lg:px-12 px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex-shrink-0 relative">
               <div className="lg:hidden">
                 <Image
@@ -70,9 +70,25 @@ const Navbar = () => {
                 />
               </div>
             </Link>
+            {/* Sandbox Logo - Conditional Placement */}
+            <div className="flex items-center lg:ml-auto md:mr-8">
+              <a
+                href="https://sandbox.aegisclub.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/Sandbox.png"
+                  alt="Sandbox Logo"
+                  width={160}
+                  height={160}
+                  className="pl-6 lg:pl-0"
+                />
+              </a>
+            </div>
 
             <button
-              className="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-2"
+              className="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-1 p-2"
               onClick={toggleMenu}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
@@ -98,7 +114,7 @@ const Navbar = () => {
             </button>
 
             <ul
-              className={`flex flex-col lg:flex-row items-center lg:space-x-8 absolute lg:static bg-black lg:bg-transparent rounded-lg top-16 lg:top-auto left-0 w-full lg:w-auto p-6 lg:p-0 transition-all duration-300 ease-in-out transform ${
+              className={`flex flex-col lg:flex-row items-center lg:space-x-8 absolute lg:static bg-black lg:bg-transparent rounded-lg top-16 lg:top-auto lg:w-auto left-0 w-full p-6 lg:p-0 transition-all duration-300 ease-in-out transform ${
                 menuOpen
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-2 opacity-0 pointer-events-none lg:translate-y-0 lg:opacity-100 lg:pointer-events-auto"

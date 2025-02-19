@@ -60,6 +60,14 @@ function SandboxRegistration() {
         {activeTab === "bgmi" && <Bgmi />}
         {activeTab === "escape" && <Escape />}
       </div>
+      {/* FAQ / Registration Note */}
+      <div className="bg-black/80 text-white text-center p-6 sm:p-4 rounded-lg mt-2 sm:mt-8 border border-white/10">
+        <p className="text-sm">
+          <strong>Note:</strong> Only one person from each team needs to
+          complete the registration. Other Team members do not need to fill out
+          individual forms.
+        </p>
+      </div>
     </div>
   );
 }
