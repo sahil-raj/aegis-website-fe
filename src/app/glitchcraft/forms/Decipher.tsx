@@ -44,7 +44,7 @@ const Decipher = () => {
       <GeneralDetails />
       <div className="space-y-4">
         <div>
-          <label className="block text-white mb-2">Team Name</label>
+          <label className="block text-white mb-2">User Name</label>
           <input
             name="Team_Name"
             type="text"
