@@ -62,11 +62,44 @@ function SandboxRegistration() {
       </div>
       {/* FAQ / Registration Note */}
       <div className="bg-black/80 text-white text-center p-6 sm:p-4 rounded-lg mt-2 sm:mt-8 border border-white/10">
-        <p className="text-sm">
-          <strong>Note:</strong> Only one person from each team needs to
-          complete the registration. Other Team members do not need to fill out
-          individual forms.
+        <p className="text-md mb-3 font-semibold underline-offset-4">
+          Important Registration Information:
         </p>
+        <ul className="text-sm space-y-2 pl-3 text-left sm:text-center list-disc list-outside sm:list-none">
+          <li className="font-semibold text-sm">
+            🚨 These events are exclusive to DSCE (Dayananda Sagar College of
+            Engineering) students only.
+          </li>
+          <li>
+            <strong>Hack-A-Note</strong> and <strong>Decipher Blitz</strong> are{" "}
+            <span className="font-semibold">solo events</span>. Each participant
+            must register individually.
+          </li>
+          <li>
+            <strong>Reelity Show</strong> and <strong>Cine Mania</strong> allow
+            a{" "}
+            <span className="font-semibold">
+              maximum team size of 3 members
+            </span>
+            .
+          </li>
+          <li>
+            <strong>BGMI Battle</strong> and <strong>Escape Room</strong> allow
+            a{" "}
+            <span className="font-semibold">
+              maximum team size of 4 members
+            </span>
+            .
+          </li>
+          <li>
+            For all team events,{" "}
+            <span className="font-semibold">
+              only one person needs to register
+            </span>{" "}
+            on behalf of the entire team. Other team members do not need to
+            register separately.
+          </li>
+        </ul>
       </div>
     </div>
   );
