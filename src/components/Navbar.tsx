@@ -6,12 +6,10 @@ import Link from "next/link";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/teams", label: "Teams" }, // Added Teams
+  { href: "/teams", label: "Teams" },
   { href: "/events", label: "Events" },
   { href: "/achievements", label: "Achievements" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/glitchcraft", label: "Glitchcraft" },
-  // { href: "/blogs", label: "Blogs" }, // Added Blogs
 ];
 
 const Navbar = () => {
@@ -29,8 +27,8 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuOpen && !(event.target as HTMLElement).closest("nav")) {
+    const handleClickOutside = (event) => {
+      if (menuOpen && !event.target.closest("nav")) {
         setMenuOpen(false);
       }
     };
@@ -48,6 +46,7 @@ const Navbar = () => {
       <nav className="mx-1 my-1">
         <div className="bg-black/0 rounded-2xl text-white backdrop-blur-sm">
           <div className="lg:px-12 px-6 py-4 flex items-center justify-between">
+            {/* Club Logo */}
             <Link href="/" className="flex-shrink-0 relative">
               <div className="lg:hidden">
                 <Image
@@ -70,8 +69,9 @@ const Navbar = () => {
                 />
               </div>
             </Link>
-            {/* Sandbox Logo - Conditional Placement */}
-            <div className="flex items-center lg:ml-auto md:mr-8">
+
+            {/* Sandbox & Glitchcraft Logos (Hidden in mobile) */}
+            <div className="hidden lg:flex items-center lg:ml-auto md:mr-8 space-x-6">
               <a
                 href="https://sandbox.aegisclub.tech"
                 target="_blank"
@@ -82,11 +82,24 @@ const Navbar = () => {
                   alt="Sandbox Logo"
                   width={160}
                   height={160}
-                  className="pl-6 lg:pl-0"
+                />
+              </a>
+
+              <a
+                href="https://aegisclub.tech/glitchcraft"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/glitchcraft.webp"
+                  alt="Glitchcraft Logo"
+                  width={160}
+                  height={160}
                 />
               </a>
             </div>
 
+            {/* Hamburger Menu Button */}
             <button
               className="lg:hidden text-white focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-1 p-2"
               onClick={toggleMenu}
@@ -113,6 +126,7 @@ const Navbar = () => {
               </svg>
             </button>
 
+            {/* Mobile Navigation */}
             <ul
               className={`flex flex-col lg:flex-row items-center lg:space-x-8 absolute lg:static bg-black lg:bg-transparent rounded-lg top-16 lg:top-auto lg:w-auto left-0 w-full p-6 lg:p-0 transition-all duration-300 ease-in-out transform ${
                 menuOpen
@@ -131,14 +145,33 @@ const Navbar = () => {
                 </li>
               ))}
 
-              {/* <li className="mt-4 lg:mt-0 lg:ml-4">
-                <Link
-                  href="/login"
-                  className="px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 block text-center"
+              {/* Sandbox & Glitchcraft Logos - Visible in mobile menu */}
+              <li className="lg:hidden flex flex-col items-center space-y-4 pt-6">
+                <a
+                  href="https://sandbox.aegisclub.tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Sign In
-                </Link>
-              </li> */}
+                  <Image
+                    src="/Sandbox.png"
+                    alt="Sandbox Logo"
+                    width={140}
+                    height={140}
+                  />
+                </a>
+                <a
+                  href="https://aegisclub.tech/glitchcraft"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/glitchcraft.webp"
+                    alt="Glitchcraft Logo"
+                    width={140}
+                    height={140}
+                  />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
