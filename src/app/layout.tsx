@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { HackathonBanner } from "@/components/Banner";
 
 import { CSPostHogProvider } from "./providers/posthogProvider";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Aegis",
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <CSPostHogProvider>
         <body className="overflow-x-hidden">
+          <Toaster position="top-center" />
           <BackgroundLayout>
             <Navbar />
             {children}

@@ -1,9 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL_GLITCH!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_KEY_GLITCH!;
-
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+import supabaseGlitchcraft from "@/lib/supabaseGlitchcraft";
 
 const useGlitchSubmit = () => {
   const submitForm = async (
@@ -11,7 +6,9 @@ const useGlitchSubmit = () => {
     formData: Record<string, string | number | boolean | File | null>
   ) => {
     try {
-      const { data, error } = await supabase.from(table).insert([formData]);
+      const { data, error } = await supabaseGlitchcraft
+        .from(table)
+        .insert([formData]);
 
       if (error) {
         console.error("Error submitting form:", error);

@@ -31,7 +31,7 @@ function SandboxRegistration() {
           { id: "music", label: "HACK-A-NOTE", icon: <Music size={20} /> },
           { id: "reel", label: "REELITY SHOW", icon: <Video size={20} /> },
           { id: "ctf", label: "DECIPHER BLITZ", icon: <Shield size={20} /> },
-          { id: "movie", label: "Movie Quiz", icon: <Film size={20} /> },
+          { id: "movie", label: "Cine Mania", icon: <Film size={20} /> },
           { id: "bgmi", label: "BGMI Battle", icon: <Gamepad2 size={20} /> },
           { id: "escape", label: "Escape Room", icon: <KeyRound size={20} /> },
         ].map((tab) => (
@@ -59,6 +59,14 @@ function SandboxRegistration() {
         {activeTab === "movie" && <Movie />}
         {activeTab === "bgmi" && <Bgmi />}
         {activeTab === "escape" && <Escape />}
+      </div>
+      {/* FAQ / Registration Note */}
+      <div className="bg-black/80 text-white text-center p-6 sm:p-4 rounded-lg mt-2 sm:mt-8 border border-white/10">
+        <p className="text-sm">
+          <strong>Note:</strong> Only one person from each team needs to
+          complete the registration. Other Team members do not need to fill out
+          individual forms.
+        </p>
       </div>
     </div>
   );
