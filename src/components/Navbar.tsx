@@ -27,8 +27,8 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuOpen && !event.target.closest("nav")) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuOpen && !(event.target as HTMLElement).closest("nav")) {
         setMenuOpen(false);
       }
     };
