@@ -9,7 +9,7 @@ const Escape = () => {
   const [loading, setLoading] = useState(false);
   const [registeredTeamsCount, setRegisteredTeamsCount] = useState(0); // Track registered teams count
   const formRef = useRef<HTMLFormElement>(null);
-  const MAX_TEAMS = 20;
+  const MAX_TEAMS = 30;
 
   useEffect(() => {
     const fetchRegisteredTeamsCount = async () => {
